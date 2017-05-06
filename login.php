@@ -12,14 +12,14 @@ $result = mysqli_query( $con,"SELECT * FROM Professor WHERE email = '$login' AND
 
 if(mysqli_num_rows($result) > 0){
     
-    header("Location: cadastro/cadastro_jogo.html");
+    header("Location: dashboard.html");
 }
 else{
 	$result = mysqli_query( $con,"SELECT * FROM Jogador WHERE email = '$login' AND  senha = '$senha'");
 
 	if(mysqli_num_rows($result) > 0){
     
-    header("Location: cadastro/cadastro_jogo.html");
+    header("Location: dashboard.html");
 	
 	}else{
     header("Location: login.html");
