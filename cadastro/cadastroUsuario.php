@@ -14,23 +14,18 @@ require_once "../conecta.php" ;
     $confirma_senha = $_POST['cadastro_input_confirma_senha'];
     $equipe="";
 
-    if ($profissao == "radio_professor") {
-      $sql = "INSERT INTO professor (Nome, CPF, Email, Curriculo, Instituicao, Titulacao, Senha ) VALUE
-      ('$nome', '$cpf', $email, '$curriculo', '$instituicao', '$titulo', '$senha' )";
-      $insert = mysqli_query($con ,$sql);
 
-      $cpf = $_POST['cadastro_input_cpf'];
-      $email = $_POST['cadastro_input_email'];
-      $sql_cpf = "select * from professor where cpf = '$cpf'";
+    if ($profissao == "radio_professor") {
+      $sql_cpf = "select * from Professor where cpf = '$cpf'";
       $resultado_cpf = mysqli_query($con, $sql_cpf);
       $existe_cpf = mysqli_num_rows($resultado_cpf);
          if ($existe_cpf) {
            //echo "<script language='javascript' type='text/javascript'>swal('Usuario ja existente', '', 'error');</script>";
           }
           else {
-          //  $sql = "insert into professor (Nome, CPF, Email, Curriculo, Instituicao, Titulacao, Senha ) value
-          //  ('$nome', '$cpf', $email, '$curriculo', '$instituicao', '$titulo', '$senha' )";
-          //  $insert = mysqli_query($con ,$sql);
+            $sql = "insert into Professor (Nome, CPF, Email, Curriculo, Instituicao, Titulacao, Senha ) value
+            ('$nome', '$cpf', '$email', '$curriculo', '$instituicao', '$titulo', '$senha' )";
+            $insert = mysqli_query($con ,$sql);
             if ($insert) {
               echo "inseriu";
           }else {
@@ -42,28 +37,32 @@ require_once "../conecta.php" ;
 
 
     else if($profissao == "radio_aluno"){
-      $sql = "insert into jogador (Nome, Instituicao, Equipe, CPF, Email, Senha) value
-      ('$nome', '$instituicao', '$equipe', '$cpf', '$email', $senha')";
-      $insert = mysqli_query($con ,$sql);
-
-      $cpf = $_POST['cadastro_input_cpf'];
-      $email = $_POST['cadastro_input_email'];
-      $sql_cpf = "select * from jogador where cpf = '$cpf'";
+      
+      $sql_cpf = "select * from Jogador where CPF = '$cpf'";
       $resultado_cpf = mysqli_query($con, $sql_cpf);
       $existe_cpf = mysqli_num_rows($resultado_cpf);
+      $sql_email = "select * from Jogador where Email = '$email'";
+      $resultado_email = mysqli_query($con, $sql_email);
+      $existe_email = mysqli_num_rows($resultado_email);
           if ($existe_cpf) {
            //echo "<script language='javascript' type='text/javascript'>swal('Usuario ja existente', '', 'error');</script>";
           }
           else {
-            $sql = "insert into jogador (Nome, Instituicao, Equipe, CPF, Email, Senha, ) value
-            ('$nome', '$instituicao', '$equipe', '$cpf', '$email', $senha')";
-            $insert = mysqli_query($con ,$sql);
-            if ($insert) {
-              echo "inseriu";
-          }else {
-            echo "não";
-            echo mysqli_error($con);
+        
+            if($existe_email){
+
+            }else{
+             
+              $sql = "insert into Jogador (Nome, Instituicao, Equipe, CPF, Email, Senha ) value
+            ('$nome', '$instituicao', '$equipe', '$cpf', '$email', '$senha')";
+            $insert = mysqli_query($con ,$sql);  
+             if ($insert) {
+              header("Location: ../login.html");
+              }else {
+              echo "não";
+              echo mysqli_error($con);
           }
+            }
         }
     }
 
