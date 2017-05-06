@@ -1,0 +1,141 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css\index_css" rel="stylesheet" type="text/css">
+    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+  </head><body>
+    <div class="cover">
+      <div class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active">
+                <a href="#">Contatos</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="background-image-fixed cover-image" style="background-image : url('img/back_show.jpg')"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div class="row">
+              <div class="col-md-12" align="center">
+                <img src="img/show_logo.png" class="img-responsive">
+              </div>
+            </div>
+            <h1 class="text-inverse"></h1>
+            <p class="text-center text-inverse">Teste os seus conhecimentos</p>
+            <br>
+            <br>
+            <a class="btn btn-lg btn-primary" data-toggle="modal" href="#modalLoginIndex">Entrar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png" class="img-responsive">
+          </div>
+          <div class="col-md-6">
+            <h1 class="text-primary">A title</h1>
+            <h3>A subtitle</h3>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+              ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+              dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies
+              nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+              Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In
+              enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum
+              felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus
+              elementum semper nisi.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fade modal" id="modalLoginIndex">
+      <div class="modal-dialog modal-sm" id="modalLoginIndex">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title" contenteditable="true">
+              <i class="fa fa-fw fa-lg fa-user"></i>Entrar</h4>
+          </div>
+          <div class="modal-body">
+            <form role="form" method="POST" action="login.php">
+              <div class="form-group">
+                <label class="control-label" for="exampleInputEmail1">Login</label>
+                <input class="form-control" name="input_login_email" id="exampleInputEmail1" placeholder="Digite o seu Login" type="email">
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="exampleInputPassword1">Senha</label>
+                <input class="form-control" name="input_login_senha" id="exampleInputPassword1" placeholder="Digite sua Senha" type="password">
+              </div>
+              <div align="center">
+                <button type="submit" class="btn btn-primary">Entrar</button>
+              </div>
+            </form>
+            <blockquote>
+              <p class="text-center">Não possui cadastro?
+                <br>
+                <a href="cadastro/cadastro.html">Crie aqui!</a>
+              </p>
+              <footer>
+                <a href="#">Recuperar senha</a>
+              </footer>
+            </blockquote>
+          </div>
+          <div class="modal-footer"></div>
+        </div>
+      </div>
+    </div>
+    <footer class="section section-primary">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <h1>Show do Milhão
+              <img src="img/show_logo.png" width="50">
+            </h1>
+            <p></p>
+          </div>
+          <div class="col-sm-6">
+            <p class="text-info text-right">
+              <br>
+              <br>
+            </p>
+            <div class="row">
+              <div class="col-md-12 hidden-lg hidden-md hidden-sm text-left">
+                <a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a>
+                <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a>
+                <a href="#"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a>
+                <a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 hidden-xs text-right">
+                <a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a>
+                <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a>
+                <a href="#"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a>
+                <a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+</body></html>

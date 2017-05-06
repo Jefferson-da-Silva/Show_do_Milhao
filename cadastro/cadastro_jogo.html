@@ -1,0 +1,182 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="../js/ajax/libs/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+        <link href="../css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="../css/page_pingendo.css" rel="stylesheet" type="text/css">
+        <link href="../css/plugins/chosen/chosen.css" rel="stylesheet">
+        <link href="../css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+        <link href="../css/plugins/iCheck/custom.css" rel="stylesheet">
+    </head><body class="hidden-md hidden-sm hidden-xs" data-spy="scroll">
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active">
+                            <a href="#">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="#">Contato</a>
+                        </li>
+                    </ul>
+                    <ul class="lead nav navbar-left navbar-nav">
+                        <li>
+                            <a href="#">Show do Milhão <img src="../img/show_logo.png" width="20"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div align="center">
+                        <i class="fa fa-5x fa-fw fa-gamepad"></i>
+                    </div>
+                    <div class="col-md-12" align="center">
+                        <h1>Criar Jogo</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <form role="form" method="POST" action="casdastro_jogo.php">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label class="control-label">Visibilidade</label>
+                                </div>
+                              <label class="radio-inline">
+                                    <input type="radio" name="optradio">Público</label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio">Privado</label>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label class="control-label">Área</label>
+                                </div>
+                                <div>
+                                    <div class="checkbox checkbox-success checkbox-inline">
+                                        <input type="checkbox" name="meucheck">
+                                        <label class="control-label">Exatas</label>
+                                    </div>
+                                    <div class="checkbox checkbox-primary checkbox-inline">
+                                        <input type="checkbox" name="meucheck">
+                                        <label class="control-label">Humanas</label>
+                                    </div>
+                                    <div class="checkbox checkbox-danger checkbox-inline">
+                                        <input type="checkbox" name="meucheck">
+                                        <label class="control-label">Saúde</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Curso</label>
+                                <select class="chosen-select form-control" name="selecionar_curso" tabindex="2">
+                                    <option value="">Selecione o curso</option>
+                                    <option>Sistemas de Informação</option>
+                                    <option>Psicologia</option>
+                                    <option>Direito</option>
+                                    <option>Engenharia Civil</option>
+                                    <option>Enfermagem</option>
+                                    <option>Nutrição</option>
+                                    <option>Fisioterapia</option>
+                                    <option>Educação Física</option>
+                                    <option>Gastronomia</option>
+                                    <option>Administração</option>
+                                    <option>Publicidade</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="exampleInputDisciplina">Disciplina</label>
+                                <input class="form-control" id="exampleInputDisciplina" placeholder="Escolha a disciplina" type="text">
+                            </div>
+                            <button type="submit" class="btn btn-sm btn-success">Salvar
+                                <i class="fa fa-fw fa-save"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="col-md-5" align="center">
+                        <img src="../img/ops.png" class="center-block img-responsive img-rounded" width="300">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Chosen-->
+        <script src="../js/plugins/chosen/chosen.jquery.js"></script>
+        <!-- iCheck -->
+        <script src="../js/plugins/iCheck/icheck.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                              $('.i-checks').iCheck({
+                                  checkboxClass: 'icheckbox_square-green',
+                                  radioClass: 'iradio_square-green'
+                              });
+
+                              var config = {
+                                      '.chosen-select'           : {},
+                                      '.chosen-select-deselect'  : {allow_single_deselect:true},
+                                      '.chosen-select-no-single' : {disable_search_threshold:10},
+                                      '.chosen-select-no-results': {no_results_text:'Oops, Não encontrei!, tente diferente'},
+                                      '.chosen-select-width'     : {width:"99%"}
+                                      }
+                                  for (var selector in config) {
+                                      $(selector).chosen(config[selector]);
+                                  }
+                                });
+        </script>
+        <footer class="section section-primary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1>Show do milhão
+                            <img src="../img/show_logo.png" width="50">
+                        </h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="text-info text-right">
+                            <br>
+                            <br>
+                        </p>
+                        <div class="row">
+                            <div class="col-md-12 hidden-lg hidden-md hidden-sm text-left">
+                                <a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a>
+                                <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a>
+                                <a href="#"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a>
+                                <a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 hidden-xs text-right">
+                                <a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a>
+                                <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a>
+                                <a href="#"><i class="fa fa-3x fa-fw fa-facebook text-inverse"></i></a>
+                                <a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+</body></html>
