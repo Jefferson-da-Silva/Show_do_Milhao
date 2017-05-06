@@ -1,4 +1,16 @@
-<html><head>
+<html>
+<?php
+session_start();
+  if((!isset ($_SESSION['email'])==true) and(!isset($_SESSION['senha'])==true)){
+    unset($_SESSION['email']);
+    unset($_SESSION['senha']);
+    header("Location: login.html");
+  }
+  $emaillogado=$_SESSION['email'];
+  $senhalogado=$_SESSION['senha'];
+
+?>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -55,7 +67,7 @@
                     <h1 style="font-family: 'Lobster'">Regras</h1></a>
                   </div>
                   <div class="col-md-3" align="center">
-                    <a href="#" style="text-decoration: none"><img src="img/quit.png" class="img-circle img-responsive" width="200">
+                    <a href="logout.php" style="text-decoration: none"><img src="img/quit.png" class="img-circle img-responsive" width="200">
                     <h1 style="font-family: 'Lobster'">Sair</h1></a>
                   </div>
                 </div>
