@@ -9,38 +9,66 @@ require_once "../conecta.php" ;
     $curriculo = $_POST['cadastro_input_curriculo'];
     $instituicao = $_POST['cadastro_input_instituicao'];
     $email = $_POST['cadastro_input_email'];
+    $titulo = $_POST['cadastro_input_titulo'];
     $senha = $_POST['cadastro_input_senha'];
     $confirma_senha = $_POST['cadastro_input_confirma_senha'];
+    $equipe="";
 
     if ($profissao == "radio_professor") {
-      $instituicao = "é professor";
-      $profissao = 0;
-  }
+      $sql = "insert into professor (Nome, CPF, Email, Curriculo, Instituicao, Titulacao, Senha ) value
+      ('$nome', '$cpf', $email, '$curriculo', '$instituicao', '$titulo', '$senha' )";
+      $insert = mysqli_query($con ,$sql);
+
+      $cpf = $_POST['cadastro_input_cpf'];
+      $email = $_POST['cadastro_input_email'];
+      $sql_cpf = "select * from professor where cpf = '$cpf'";
+      $resultado_cpf = mysqli_query($con, $sql_cpf);
+      $existe_cpf = mysqli_num_rows($resultado_cpf);
+         if ($existe_cpf) {
+           //echo "<script language='javascript' type='text/javascript'>swal('Usuario ja existente', '', 'error');</script>";
+          //}
+          else {
+          //  $sql = "insert into professor (Nome, CPF, Email, Curriculo, Instituicao, Titulacao, Senha ) value
+          //  ('$nome', '$cpf', $email, '$curriculo', '$instituicao', '$titulo', '$senha' )";
+          //  $insert = mysqli_query($con ,$sql);
+            if ($insert) {
+              echo "inseriu";
+          }else {
+            echo "não";
+            echo mysqli_error($con);
+          }
+        }
+    }
+
+
     else if($profissao == "radio_aluno"){
-      $curriculo = "é aluno";
-      $profissao = 1;
-  }
-    $cpf = $_POST['cadastro_input_cpf'];
-    $email = $_POST['cadastro_input_email'];
-    $sql_cpf = "select * from usuario where cpf = '$cpf'";
-    $resultado_cpf = mysqli_query($con, $sql_cpf);
-    $existe_cpf = mysqli_num_rows($resultado_cpf);
-        if ($existe_cpf) {
-         //echo "<script language='javascript' type='text/javascript'>swal('Usuario ja existente', '', 'error');</script>";
+      $sql = "insert into jogador (Nome, Instituicao, Equipe, CPF, Email, Senha) value
+      ('$nome', '$instituicao', '$equipe', '$cpf', '$email', $senha')";
+      $insert = mysqli_query($con ,$sql);
+
+      $cpf = $_POST['cadastro_input_cpf'];
+      $email = $_POST['cadastro_input_email'];
+      $sql_cpf = "select * from jogador where cpf = '$cpf'";
+      $resultado_cpf = mysqli_query($con, $sql_cpf);
+      $existe_cpf = mysqli_num_rows($resultado_cpf);
+          if ($existe_cpf) {
+           //echo "<script language='javascript' type='text/javascript'>swal('Usuario ja existente', '', 'error');</script>";
+          }
+          else {
+            $sql = "insert into jogador (Nome, Instituicao, Equipe, CPF, Email, Senha, ) value
+            ('$nome', '$instituicao', '$equipe', '$cpf', '$email', $senha', )";
+            $insert = mysqli_query($con ,$sql);
+            if ($insert) {
+              echo "inseriu";
+          }else {
+            echo "não";
+            echo mysqli_error($con);
+          }
         }
-        else {
-          $sql = "insert into usuario (profissao, nome, instituicao, email, senha, cpf, curriculo_lattes ) value
-          ('$profissao', '$nome','$instituicao','$email', '$senha', '$cpf', '$curriculo' )";
-          $insert = mysqli_query($con ,$sql);
-          if ($insert) {
-            echo "inseriu";
-        }else {
-          echo "não";
-          echo mysqli_error($con);
-        }
-      }
-  }
+    }
 
 
 
+
+}
 ?>
