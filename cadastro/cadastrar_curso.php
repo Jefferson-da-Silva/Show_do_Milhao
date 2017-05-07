@@ -1,6 +1,5 @@
 <?php
 	require_once "../conecta.php" ;
-	echo "where are you";
     $curso = $_POST['nome_do_curso'];
     	if(isset($_POST['botao_cadastrar_curso'])) {
             $sql_curso = "select * from Curso where Descricao_Curso = '$curso'";
