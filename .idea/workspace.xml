@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="beb21b6e-b7fc-4a78-beb6-9792accf7541" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cadastro/cadastrar_curso.php" afterPath="$PROJECT_DIR$/cadastro/cadastrar_curso.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cadastro/cadastro_jogo.html" afterPath="$PROJECT_DIR$/cadastro/cadastro_jogo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="beb21b6e-b7fc-4a78-beb6-9792accf7541" name="Default" comment="" />
     <ignored path="Show_do_Milhao.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -33,11 +29,21 @@
         <entry file="file://$PROJECT_DIR$/cadastro/cadastrar_curso.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.1689008" vertical-offset="0" max-vertical-offset="746">
-              <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+              <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
               <folding>
                 <marker date="1494189545059" expanded="true" signature="161:213" placeholder="select * fro..Curso..." />
                 <marker date="1494189545059" expanded="true" signature="627:679" placeholder="insert into ..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cadastro_jogo.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cadastro/cadastro_jogo.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-37.333332" vertical-offset="3240" max-vertical-offset="5976">
+              <caret line="236" column="65" selection-start-line="236" selection-start-column="65" selection-end-line="236" selection-end-column="65" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -248,22 +254,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cadastro/cadastro_jogo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="773">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cadastro/cadastro_jogo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56568366" vertical-offset="3826" max-vertical-offset="5976">
-          <caret line="236" column="66" selection-start-line="236" selection-start-column="66" selection-end-line="236" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/conecta.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="773">
@@ -376,10 +366,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cadastro/cadastro_jogo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14477211" vertical-offset="0" max-vertical-offset="746">
+          <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cadastro/cadastro_jogo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-37.333332" vertical-offset="3240" max-vertical-offset="5976">
+          <caret line="236" column="65" selection-start-line="236" selection-start-column="65" selection-end-line="236" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cadastro/cadastrar_curso.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1689008" vertical-offset="0" max-vertical-offset="746">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
           <folding>
             <marker date="1494189545059" expanded="true" signature="161:213" placeholder="select * fro..Curso..." />
             <marker date="1494189545059" expanded="true" signature="627:679" placeholder="insert into ..." />
