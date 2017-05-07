@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="beb21b6e-b7fc-4a78-beb6-9792accf7541" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cadastro/cadastrar_curso.php" afterPath="$PROJECT_DIR$/cadastro/cadastrar_curso.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cadastro/cadastro_jogo.html" afterPath="$PROJECT_DIR$/cadastro/cadastro_jogo.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -31,19 +32,24 @@
       <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-62.0" vertical-offset="0" max-vertical-offset="2646">
-              <caret line="93" column="46" selection-start-line="93" selection-start-column="46" selection-end-line="93" selection-end-column="46" />
-              <folding />
+            <state vertical-scroll-proportion="6.6666665" vertical-offset="702" max-vertical-offset="2628">
+              <caret line="29" column="61" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cadastro_jogo.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cadastro/cadastro_jogo.php">
+      <file leaf-file-name="cadastrar_curso.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cadastro/cadastrar_curso.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="594">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="-12.666667" vertical-offset="0" max-vertical-offset="468">
+              <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+              <folding>
+                <marker date="1494189144999" expanded="true" signature="176:228" placeholder="select * fro..Curso..." />
+                <marker date="1494189144999" expanded="true" signature="566:618" placeholder="insert into ..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -51,17 +57,19 @@
       <file leaf-file-name="cadastro_jogo.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cadastro/cadastro_jogo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.5201073" vertical-offset="1134" max-vertical-offset="3960">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1494182756168" expanded="true" signature="2188:3740" placeholder="..." />
-                <marker date="1494182756168" expanded="true" signature="2261:3740" placeholder="..." />
-                <marker date="1494182756168" expanded="true" signature="3694:3740" placeholder="..." />
-                <marker date="1494182756168" expanded="true" signature="7470:8107" placeholder="{...}" />
-                <marker date="1494182756168" expanded="true" signature="7554:7707" placeholder="{&quot;checkboxClass&quot;: 'icheckbox_square-green'...}" />
-                <marker date="1494182756168" expanded="true" signature="7763:7955" placeholder="{...}" />
-                <marker date="1494182756168" expanded="true" signature="8049:8094" placeholder="{...}" />
-              </folding>
+            <state vertical-scroll-proportion="0.613941" vertical-offset="4528" max-vertical-offset="5976">
+              <caret line="277" column="38" selection-start-line="277" selection-start-column="38" selection-end-line="277" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cadastro.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cadastro/cadastro.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-30.074074" vertical-offset="970" max-vertical-offset="3132">
+              <caret line="99" column="12" selection-start-line="99" selection-start-column="12" selection-end-line="99" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -80,6 +88,7 @@
         <option value="$PROJECT_DIR$/cadastro/cadastroUsuario.php" />
         <option value="$PROJECT_DIR$/dashboard.php" />
         <option value="$PROJECT_DIR$/login.php" />
+        <option value="$PROJECT_DIR$/cadastro/cadastrar_curso.php" />
         <option value="$PROJECT_DIR$/cadastro/cadastro_jogo.html" />
       </list>
     </option>
@@ -158,6 +167,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../revenda-carro" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -202,7 +212,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1600" height="876" extended-state="7" />
+    <frame x="0" y="24" width="1600" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -255,13 +265,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cadastro/cadastro.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33522728" vertical-offset="1078" max-vertical-offset="3132">
-          <caret line="73" column="75" selection-start-line="73" selection-start-column="75" selection-end-line="73" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cadastro/cadastroUsuario.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7926136" vertical-offset="0" max-vertical-offset="1404">
@@ -276,10 +279,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/login.html">
+    <entry file="file://$PROJECT_DIR$/cadastro/cadastro.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-62.0" vertical-offset="0" max-vertical-offset="2646">
-          <caret line="93" column="46" selection-start-line="93" selection-start-column="46" selection-end-line="93" selection-end-column="46" />
+        <state vertical-scroll-proportion="-30.074074" vertical-offset="970" max-vertical-offset="3132">
+          <caret line="99" column="12" selection-start-line="99" selection-start-column="12" selection-end-line="99" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -292,19 +295,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="6.6666665" vertical-offset="702" max-vertical-offset="2628">
+          <caret line="29" column="61" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cadastro/cadastrar_curso.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.666667" vertical-offset="0" max-vertical-offset="468">
+          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+          <folding>
+            <marker date="1494189144999" expanded="true" signature="176:228" placeholder="select * fro..Curso..." />
+            <marker date="1494189144999" expanded="true" signature="566:618" placeholder="insert into ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cadastro/cadastro_jogo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.5201073" vertical-offset="1134" max-vertical-offset="3060">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1494182756168" expanded="true" signature="2188:3740" placeholder="..." />
-            <marker date="1494182756168" expanded="true" signature="2261:3740" placeholder="..." />
-            <marker date="1494182756168" expanded="true" signature="3694:3740" placeholder="..." />
-            <marker date="1494182756168" expanded="true" signature="7470:8107" placeholder="{...}" />
-            <marker date="1494182756168" expanded="true" signature="7554:7707" placeholder="{&quot;checkboxClass&quot;: 'icheckbox_square-green'...}" />
-            <marker date="1494182756168" expanded="true" signature="7763:7955" placeholder="{...}" />
-            <marker date="1494182756168" expanded="true" signature="8049:8094" placeholder="{...}" />
-          </folding>
+        <state vertical-scroll-proportion="0.613941" vertical-offset="4528" max-vertical-offset="5976">
+          <caret line="277" column="38" selection-start-line="277" selection-start-column="38" selection-end-line="277" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
