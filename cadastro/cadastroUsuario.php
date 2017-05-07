@@ -27,10 +27,9 @@ require_once "../conecta.php" ;
             ('$nome', '$cpf', '$email', '$curriculo', '$instituicao', '$titulo', '$senha' )";
             $insert = mysqli_query($con ,$sql);
             if ($insert) {
-              echo "inseriu";
+                header("Location: ../login.html");
           }else {
-            echo "não";
-            echo mysqli_error($con);
+
           }
         }
     }

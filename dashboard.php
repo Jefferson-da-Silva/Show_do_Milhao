@@ -6,8 +6,9 @@ session_start();
     unset($_SESSION['senha']);
     header("Location: login.html");
   }
-  $emaillogado=$_SESSION['email'];
-  $senhalogado=$_SESSION['senha'];
+  $emailLogado = $_SESSION['email'];
+  $senhaLogado = $_SESSION['senha'];
+  $profissaoLogado = $_SESSION['profissao'];
 
 ?>
 <head>
@@ -18,6 +19,7 @@ session_start();
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+
   </head><body>
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
@@ -46,29 +48,33 @@ session_start();
         </div>
       </div>
     </div>
-    <div class="section" style="display: inline">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-3" align="center">
-                    <a href="#" style="text-decoration: none"><img src="img/start_game.png" class="img-circle img-responsive" width="200">
-                    <h1 style="font-family: 'Lobster'">Selecionar Jogo</h1>
+
+    <?php
+
+    if($profissaoLogado == "aluno"){
+     echo  " <div class='section''>
+      <div class='container'>
+        <div class='row'>
+          <div class='col-md-12'>
+            <div class='section'>
+              <div class='container'>
+                <div class='row'>
+                  <div class='col-md-3' align='center'>
+                    <a href='#' style='text-decoration: none'><img src='img/start_game.png' class='img-circle img-responsive' width='200'>
+                    <h1 style='font-family: Lobster'>Selecionar Jogo</h1>
                   </a>
                   </div>
-                  <div class="col-md-3" align="center">
-                    <a href="#" style="text-decoration: none"><img src="img/icon_ranking.png" class="img-circle img-responsive" width="200">
-                    <h1 style="font-family: 'Lobster'">Ranking</h1></a>
+                  <div class='col-md-3' align='center'>
+                    <a href='#' style='text-decoration: none'><img src='img/icon_ranking.png' class='img-circle img-responsive' width='200'>
+                    <h1 style='font-family: Lobster'>Ranking</h1></a>
                   </div>
-                  <div class="col-md-3" align="center">
-                    <a href="#" style="text-decoration: none"><img src="img/icon_rules.png" class="img-circle img-responsive" width="200">
-                    <h1 style="font-family: 'Lobster'">Regras</h1></a>
+                  <div class='col-md-3' align='center'>
+                    <a href='#' style='text-decoration: none'><img src='img/icon_rules.png' class='img-circle img-responsive' width='200'>
+                    <h1 style='font-family: Lobster'>Regras</h1></a>
                   </div>
-                  <div class="col-md-3" align="center">
-                    <a href="logout.php" style="text-decoration: none"><img src="img/quit.png" class="img-circle img-responsive" width="200">
-                    <h1 style="font-family: 'Lobster'">Sair</h1></a>
+                  <div class='col-md-3' align='center'>
+                    <a href='logout.php' style='text-decoration: none'><img src='img/quit.png' class='img-circle img-responsive' width='200'>
+                    <h1 style='font-family: Lobster'>Sair</h1></a>
                   </div>
                 </div>
               </div>
@@ -76,7 +82,44 @@ session_start();
           </div>
         </div>
       </div>
-    </div>
+    </div>";
+    }else if($profissaoLogado == "professor"){
+        echo  " <div class='section''>
+      <div class='container'>
+        <div class='row'>
+          <div class='col-md-12'>
+            <div class='section'>
+              <div class='container'>
+                <div class='row'>
+                  <div class='col-md-3' align='center'>
+                    <a href='#' style='text-decoration: none'><img src='img/start_game.png' class='img-circle img-responsive' width='200'>
+                    <h1 style='font-family: Lobster'>Criar Jogo</h1>
+                  </a>
+                  </div>
+                  <div class='col-md-3' align='center'>
+                    <a href='#' style='text-decoration: none'><img src='img/icon_acess.png' class='img-circle img-responsive' width='200'>
+                    <h1 style='font-family: Lobster'>Liberar Aluno </h1></a>
+                  </div>
+                  <div class='col-md-3' align='center'>
+                    <a href='#' style='text-decoration: none'><img src='img/icon_rules.png' class='img-circle img-responsive' width='200'>
+                    <h1 style='font-family: Lobster'>Regras</h1></a>
+                  </div>
+                  <div class='col-md-3' align='center'>
+                    <a href='logout.php' style='text-decoration: none'><img src='img/quit.png' class='img-circle img-responsive' width='200'>
+                    <h1 style='font-family: Lobster'>Sair</h1></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>";
+
+
+    }
+    ?>
+
     <div class="section" style="display: none">
       <div class="container">
         <div class="row">

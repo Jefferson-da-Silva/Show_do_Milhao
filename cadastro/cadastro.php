@@ -73,7 +73,7 @@
               </div>
               <div class="form-group" id="divTitulo" style="display: none">
                 <label class="control-label" for="exampleInputTitulo">Titulo</label>
-                <input class="form-control" id="exampleInputTitulo" name="cadastro_input_titulo" placeholder="Digite o seu Titulo" type="url">
+                <input class="form-control" id="exampleInputTitulo" name="cadastro_input_titulo" placeholder="Digite o seu Titulo" type="text">
               </div>
               <div class="form-group" id="divAluno">
                 <label class="control-label" for="exampleInputInstituicao">Instituição</label>
