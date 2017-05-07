@@ -81,11 +81,32 @@
                   <option value="">Selecione o curso</option>
                   <option value=""></option>
                 </select>
+                <br>
+                <a class="btn btn-danger btn-sm" data-toggle="modal" href="#modalCurso">Cadastre um curso
+                  <i class="fa fa-fw fa-plus"></i></a>
               </div>
               <div class="form-group">
-                <label class="control-label" for="exampleInputDisciplina">Disciplina</label>
-                <input class="form-control" id="exampleInputDisciplina" placeholder="Escolha a disciplina" type="text">
+                <label class="control-label">Disciplina</label>
+                <select class="chosen-select form-control" name="selecionar_curso" tabindex="2">
+                  <option value="">Selecione a disciplina</option>
+                  <option value=""></option>
+                </select>
+                <br>
+                <a class="btn btn-danger btn-sm" data-toggle="modal" href="#modalDisciplina">Cadastre uma disciplina
+                  <i class="fa fa-fw fa-plus"></i></a>
               </div>
+              <div class="form-group">
+                <label class="control-label">Assunto</label>
+                <select class="chosen-select form-control" name="selecionar_curso" tabindex="2">
+                  <option value="">Selecione o assunto</option>
+                  <option value=""></option>
+                </select>
+                <br>
+                <a class="btn btn-danger btn-sm" data-toggle="modal" href="#modalAssunto">Cadastre um assunto
+                  <i class="fa fa-fw fa-plus"></i></a>
+              </div>
+              <a class="btn btn-block btn-primary btn-sm" data-toggle="modal" href="#modalPergunta">Cadastrar perguntas  <i class="fa fa-fw fa-list-alt"></i></a>
+              <br>
               <button type="submit" class="btn btn-sm btn-success">Salvar
                 <i class="fa fa-fw fa-save"></i>
               </button>
@@ -110,23 +131,164 @@
     <script src="../js/plugins/iCheck/icheck.min.js"></script>
     <script>
       $(document).ready(function(){
-                              $('.i-checks').iCheck({
-                                  checkboxClass: 'icheckbox_square-green',
-                                  radioClass: 'iradio_square-green'
-                              });
-
-                              var config = {
-                                      '.chosen-select'           : {},
-                                      '.chosen-select-deselect'  : {allow_single_deselect:true},
-                                      '.chosen-select-no-single' : {disable_search_threshold:10},
-                                      '.chosen-select-no-results': {no_results_text:'Oops, Não encontrei!, tente diferente'},
-                                      '.chosen-select-width'     : {width:"99%"}
-                                      }
-                                  for (var selector in config) {
-                                      $(selector).chosen(config[selector]);
-                                  }
-                                });
+                                      $('.i-checks').iCheck({
+                                          checkboxClass: 'icheckbox_square-green',
+                                          radioClass: 'iradio_square-green'
+                                      });
+        
+                                      var config = {
+                                              '.chosen-select'           : {},
+                                              '.chosen-select-deselect'  : {allow_single_deselect:true},
+                                              '.chosen-select-no-single' : {disable_search_threshold:10},
+                                              '.chosen-select-no-results': {no_results_text:'Oops, Não encontrei!, tente diferente'},
+                                              '.chosen-select-width'     : {width:"99%"}
+                                              }
+                                          for (var selector in config) {
+                                              $(selector).chosen(config[selector]);
+                                          }
+                                        });
     </script>
+    <div class="modal fade" id="modalPergunta">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title">Cadastrar Perguntas</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <div class="col-sm-2">
+                  <label for="inputEmail3" class="control-label">Pergunta</label>
+                </div>
+                <div class="col-sm-10">
+                  <textarea class="form-control" id="inputEmail3" placeholder="Pergunta" rows="5"></textarea>
+                </div>
+              </div>
+              <p class="lead text-center text-danger">Selecione a alternativa correta!</p>
+              <div class="form-group">
+                <div class="col-sm-2">
+                  <label for="inputPassword3" class="control-label">Alternativa 1</label>
+                  <input type="radio" name="optradio-grandeArea">
+                </div>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputPassword3" placeholder="Alternativa 1">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-2">
+                  <label for="inputPassword3" class="control-label">Alternativa 2</label>
+                  <input type="radio" name="optradio-grandeArea">
+                </div>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputPassword3" placeholder="Alternativa 2">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-2">
+                  <label for="inputPassword3" class="control-label">Alternativa 3</label>
+                  <input type="radio" name="optradio-grandeArea">
+                </div>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputPassword3" placeholder="Alternativa 3">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-2">
+                  <label for="inputPassword3" class="control-label">Alternativa 4</label>
+                  <input type="radio" name="optradio-grandeArea">
+                </div>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputPassword3" placeholder="Alternativa 4">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-2">
+                  <label for="inputPassword3" class="control-label">Alternativa 5</label>
+                  <input type="radio" name="optradio-grandeArea">
+                </div>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputPassword3" placeholder="Alternativa 5">
+                </div>
+              </div>
+            </form>
+          </div>
+          <p class="text-center text-success">1/19</p>
+          <div class="modal-footer">
+            <a class="btn btn-primary">Save changes</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalCurso">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title" id="modalCurso">Cadastrar um Curso</h4>
+          </div>
+          <div class="modal-body">
+            <form role="form">
+              <div class="form-group">
+                <label class="control-label" for="exampleInputEmail1">Nome do Curso</label>
+                <input class="form-control" id="exampleInputEmail1" placeholder="Digite o nome do curso" type="email">
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-success" contenteditable="true">Cadastrar
+                  <i class="fa fa-fw fa-save"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalDisciplina">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title" id="modalDisciplina">Cadastrar uma Disciplina</h4>
+          </div>
+          <div class="modal-body">
+            <form role="form">
+              <div class="form-group">
+                <label class="control-label" for="exampleInputEmail1">Nome da disciplina</label>
+                <input class="form-control" id="exampleInputEmail1" placeholder="Digite o nome da disciplina" type="email">
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-success" contenteditable="true">Cadastrar
+                  <i class="fa fa-fw fa-save"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalAssunto">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title" id="modalAssunto">Cadastrar um Assunto</h4>
+          </div>
+          <div class="modal-body">
+            <form role="form">
+              <div class="form-group">
+                <label class="control-label" for="exampleInputEmail1">Nome do Assunto</label>
+                <input class="form-control" id="exampleInputEmail1" placeholder="Digite o nome do Assunto" type="email">
+              </div>
+              <div class="modal-footer">
+                <button contenteditable="true" type="submit" class="btn btn-success">Cadastrar
+                  <i class="fa fa-fw fa-save"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <footer class="section section-primary">
       <div class="container">
         <div class="row">
