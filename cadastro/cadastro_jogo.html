@@ -228,13 +228,13 @@
             <h4 class="modal-title" id="modalCurso">Cadastrar um Curso</h4>
           </div>
           <div class="modal-body">
-            <form role="form">
+            <form role="form" method="POST" action="cadastrar_curso.php">
               <div class="form-group">
                 <label class="control-label" for="exampleInputEmail1">Nome do Curso</label>
-                <input class="form-control" id="exampleInputEmail1" placeholder="Digite o nome do curso" type="email">
+                <input class="form-control" name="nome_do_curso" id="exampleInputEmail1" placeholder="Digite o nome do curso" type="email">
               </div>
               <div class="modal-footer">
-                <button type="submit" class="btn btn-success" contenteditable="true">Cadastrar
+                <button type="submit" class="btn btn-success" value="botao_cadastrar_curso" >Cadastrar
                   <i class="fa fa-fw fa-save"></i>
                 </button>
               </div>
