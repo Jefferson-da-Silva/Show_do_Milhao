@@ -26,6 +26,7 @@ function SmartWizard(target, options) {
         finish  : $('<a>'+options.labelFinish+'</a>').attr("href","#").addClass("buttonFinish")
     };
 
+
     /*
      * Private functions
      */
@@ -67,6 +68,85 @@ function SmartWizard(target, options) {
             return false;
         });
         $($this.buttons.finish).click(function() {
+
+            var curso       = document.getElementById('selecionar_curso').value;
+            var disciplina  = document.getElementById('selecionar_disciplina').value;
+            var assunto     = document.getElementById('selecionar_assunto').value;
+            var visibilidade = "";
+            var area = "";
+
+            var corretas = [];
+            var perguntas = [];
+            var alternativas = [];
+
+            for( var i = 1; i < 20; i++){
+                var inputArea = "inputextArea"+i;
+                perguntas.push(document.getElementById(inputArea).value);
+
+                var inputAlternativa1 = "inputAlternativa1_"+ i,
+                    inputAlternativa2 = "inputAlternativa2_"+ i,
+                    inputAlternativa3 = "inputAlternativa3_"+ i,
+                    inputAlternativa4 = "inputAlternativa4_"+ i,
+                    inputAlternativa5 = "inputAlternativa5_"+i;
+
+                alternativas.push(document.getElementById(inputAlternativa1).value);
+                alternativas.push(document.getElementById(inputAlternativa2).value);
+                alternativas.push(document.getElementById(inputAlternativa3).value);
+                alternativas.push(document.getElementById(inputAlternativa4).value);
+                alternativas.push(document.getElementById(inputAlternativa5).value);
+
+                var optradio_alrenativa_1 = "optradio_alrenativa_1_"+i,
+                    optradio_alrenativa_2 = "optradio_alrenativa_2_"+i,
+                    optradio_alrenativa_3 = "optradio_alrenativa_3_"+i,
+                    optradio_alrenativa_4 = "optradio_alrenativa_4_"+i,
+                    optradio_alrenativa_5 = "optradio_alrenativa_5_"+i;
+
+                if(document.getElementById(optradio_alrenativa_1).value == "on")
+                    corretas.push("alternativa 1");
+                else if(document.getElementById(optradio_alrenativa_2).value == "on")
+                    corretas.push("alternativa 2");
+                else if(document.getElementById(optradio_alrenativa_3).value == "on")
+                    corretas.push("alternativa 3");
+                else if(document.getElementById(optradio_alrenativa_4).value == "on")
+                    corretas.push("alternativa 4");
+                else if(document.getElementById(optradio_alrenativa_5).value == "on")
+                    corretas.push("alternativa 5");
+            }
+
+
+            //console.log(corretas);
+            //CAPTURA OS DADOS DO FORMULARIO
+
+            if(document.getElementById('optradio1').value == "on")
+                visibilidade = "Publico";
+            else if(document.getElementById('optradio2').value == "on");
+                visibilidade = "Privado";
+
+            if(document.getElementById('optradio-grandeArea1').value == "on")
+                area = "Exatas";
+            else if(document.getElementById('optradio-grandeArea2').value == "on")
+                area = "Humanas";
+            else if(document.getElementById('optradio-grandeArea3').value == "on")
+                area = "Saúde";
+
+            //CAPTURA OS DADOS DAS PERGUNTAS
+
+
+           $.post("../cadastro/cadastrar_perguntas.php", {
+               'curso':curso,
+               'disciplina': disciplina,
+               'assunto': assunto,
+               'visibilidade': visibilidade,
+               'area':area,
+               'corretas_array': corretas,
+               'perguntas_array': perguntas,
+               'alternativas_array': alternativas
+           }, function(result){
+               console.log(result);
+               //if(result)
+               // window.location.assign("../cadastro/cadastro_jogo.php");
+            });
+
             if(!$(this).hasClass('buttonDisabled')){
                 if($.isFunction($this.options.onFinish)) {
                     var context = { fromStep: $this.curStepIdx + 1 };
@@ -430,16 +510,16 @@ $.fn.smartWizard.defaults = {
     selected: 0,  // Selected Step, 0 = first step
     keyNavigation: true, // Enable/Disable key navigation(left and right keys are used if enabled)
     enableAllSteps: false,
-    transitionEffect: 'fade', // Effect on navigation, none/fade/slide/slideleft
+    transitionEffect: 'slide', // Effect on navigation, none/fade/slide/slideleft
     contentURL:null, // content url, Enables Ajax content loading
     contentCache:true, // cache step contents, if false content is fetched always from ajax url
     cycleSteps: false, // cycle step navigation
-    enableFinishButton: false, // make finish button enabled always
+    enableFinishButton: true, // make finish button enabled always
 	hideButtonsOnDisabled: false, // when the previous/next/finish buttons are disabled, hide them instead?
     errorSteps:[],    // Array Steps with errors
-    labelNext:'Next',
-    labelPrevious:'Previous',
-    labelFinish:'Finish',
+    labelNext:'Próximo',
+    labelPrevious:'Anterior',
+    labelFinish:'Finalizar',
     noForwardJumping: false,
     onLeaveStep: null, // triggers when leaving a step
     onShowStep: null,  // triggers when showing a step

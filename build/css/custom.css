@@ -753,30 +753,6 @@ a:hover, a:focus {
   display: block;
   padding: 4px 6px; }
 
-footer {
-  background: #fff;
-  padding: 15px 20px;
-  display: block; }
-
-.nav-sm footer {
-  margin-left: 70px; }
-
-.footer_fixed footer {
-  position: fixed;
-  left: 0px;
-  bottom: 0px;
-  width: 100%; }
-
-@media (min-width: 768px) {
-  .footer_fixed footer {
-    margin-left: 0; } }
-@media (min-width: 768px) {
-  .footer_fixed .nav-sm footer {
-    margin-left: 0; } }
-.tile-stats.sparkline {
-  padding: 10px;
-  text-align: center; }
-
 .jqstooltip {
   background: #34495E !important;
   width: 30px !important;
@@ -1503,31 +1479,7 @@ span.right {
 .tile_info a {
   text-overflow: ellipsis; }
 
-.sidebar-footer {
-  bottom: 0px;
-  clear: both;
-  display: block;
-  padding: 5px 0 0 0;
-  position: fixed;
-  width: 230px;
-  background: #2A3F54; }
 
-.sidebar-footer a {
-  padding: 7px 0 3px;
-  text-align: center;
-  width: 25%;
-  font-size: 17px;
-  display: block;
-  float: left;
-  background: #172D44; }
-
-.sidebar-footer a:hover {
-  background: #425567; }
-
-/** top tiles  */
-.tile_count {
-  margin-bottom: 20px;
-  margin-top: 20px; }
 
 .tile_count .tile_stats_count {
   border-bottom: 1px solid #D9DEE4;
@@ -1537,9 +1489,6 @@ span.right {
   white-space: nowrap;
   position: relative; }
 
-@media (min-width: 992px) {
-  footer {
-    margin-left: 230px; } }
 @media (min-width: 992px) {
   .tile_count .tile_stats_count {
     margin-bottom: 10px;
@@ -1752,25 +1701,6 @@ h4.graph_title {
   margin-top: 5px;
   font-size: 12px; }
 
-.tile-stats > .dash-box-footer {
-  position: relative;
-  text-align: center;
-  margin-top: 5px;
-  padding: 3px 0;
-  color: #fff;
-  color: rgba(255, 255, 255, 0.8);
-  display: block;
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.1);
-  text-decoration: none; }
-
-.tile-stats > .dash-box-footer:hover {
-  color: #fff;
-  background: rgba(0, 0, 0, 0.15); }
-
-.tile-stats > .dash-box-footer:hover {
-  color: #fff;
-  background: rgba(0, 0, 0, 0.15); }
 
 table.tile_info {
   padding: 10px 15px; }
@@ -1963,9 +1893,6 @@ button,
   border-left: none;
   border-right: none;
   overflow: auto; }
-
-.compose .compose-footer {
-  padding: 10px; }
 
 /** /inbox **/
 /* *********  form design  **************************** */
@@ -2871,19 +2798,6 @@ ul.project_files li a i {
 
 .pricing_features ul li {
   margin-top: 10px; }
-
-.pricing_footer {
-  padding: 10px 15px;
-  background-color: #f5f5f5;
-  border-top: 1px solid #ddd;
-  text-align: center;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px; }
-
-.pricing_footer p {
-  font-size: 13px;
-  padding: 10px 0 2px;
-  display: block; }
 
 .ui-ribbon-container {
   position: relative; }

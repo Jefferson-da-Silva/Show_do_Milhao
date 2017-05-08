@@ -9,18 +9,15 @@
             if ($existe_curso > 0) {
 
                 echo "existe > 0";
-                //echo "<script language='javascript' type='text/javascript'>swal('Usuario ja existente', '', 'error');</script>";
+                echo "<script language='javascript' type='text/javascript'>swal('Usuario ja existente', '', 'error');</script>";
             } else {
 
-                echo "existe < 0";
                 $sql = "insert into Curso (Descricao_Curso) value ('$curso')";
                 $insert = mysqli_query($con, $sql);
                 if ($insert) {
-                    header("Location: cadastro_jogo.html");
+                    header("Location: cadastro_jogo.php");
                 } else {
-
                     echo mysqli_error($con);
-                    echo "não inseriu";
 
                 }
             }
