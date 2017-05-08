@@ -11,7 +11,7 @@
                 $sql = "insert into Disciplina (Descricao_Disciplina) value ('$disciplina')";
                 $insert = mysqli_query($con, $sql);
                 if ($insert) {
-                    header("Location: cadastro_jogo.html");
+                    header("Location: cadastro_jogo.php");
                 } else {
 
                 }

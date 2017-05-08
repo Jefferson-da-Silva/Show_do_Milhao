@@ -11,7 +11,7 @@
                 $sql = "insert into Assunto (Descricao_Assunto) value ('$assunto')";
                 $insert = mysqli_query($con, $sql);
                 if ($insert) {
-                    header("Location: cadastro_jogo.html");
+                    header("Location: cadastro_jogo.php");
                 } else {
 
                 }
