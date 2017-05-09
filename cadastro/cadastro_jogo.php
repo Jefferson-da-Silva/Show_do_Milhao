@@ -1,5 +1,22 @@
 <!DOCTYPE html>
-<?php ?>
+<?php
+
+session_start();
+if((!isset ($_SESSION['email'])) and (!isset($_SESSION['senha']))){
+    unset($_SESSION['email']);
+    unset($_SESSION['senha']);
+    unset($_SESSION['profissao']);
+    header("Location: ../login.html");
+}else{
+    if(($_SESSION['profissao']  == "aluno")){
+        header("Location: ../dashboard.php");
+    }
+}
+$emailLogado = $_SESSION['email'];
+$senhaLogado = $_SESSION['senha'];
+$profissaoLogado = $_SESSION['profissao'];
+
+?>
 
 <?php
 if($_GET['dadossalvos'] == "true" ){
@@ -139,7 +156,7 @@ if($_GET['dadossalvos'] == "true" ){
                                 <?php
 
                                 ?>
-                                <select class="chosen-select form-control" id="selecionar_disciplina" tabindex="2">
+                                <select class="chosen-select form-control" id="selecionar_disciplina" tabindex="2" disabled>
                                     <option value="">Selecione a disciplina</option>
                                     <?php
                                     require_once "../conecta.php" ;
@@ -160,7 +177,7 @@ if($_GET['dadossalvos'] == "true" ){
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Assunto</label>
-                                <select class="chosen-select form-control" name="selecionar_assunto"  id="selecionar_assunto" tabindex="2">
+                                <select class="chosen-select form-control" name="selecionar_assunto"  id="selecionar_assunto" tabindex="2" disabled>
                                     <option value="">Selecione o assunto</option>
                                     <?php
                                     require_once "../conecta.php" ;
