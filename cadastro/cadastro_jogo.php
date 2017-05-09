@@ -1,3 +1,25 @@
+<!DOCTYPE html>
+<?php ?>
+
+<?php
+if($_GET['dadossalvos'] == "true" ){
+    echo " <script type='text/javascript'>
+        function startSuccess(){
+            swal('Jogo Salvo!', '', 'success');
+        };
+        window.onload=startSuccess;
+        </script>";
+}else if($_GET['dadossalvos'] == "false"){
+    echo " <script type='text/javascript'>
+        function startError(){
+            swal('Erro ao tentar salvar jogo!', '', 'error');
+        };
+        window.onload=startError;
+        </script>";
+}
+?>
+
+
 <html><head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +38,14 @@
         <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
         <!-- NProgress -->
         <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
-    </head><body class="" data-spy="scroll">
+
+        <script src="../sweetalert/dist/sweetalert.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../sweetalert/dist/sweetalert.css">
+
+
+
+</head><body class="" data-spy="scroll">
+
         <div class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">

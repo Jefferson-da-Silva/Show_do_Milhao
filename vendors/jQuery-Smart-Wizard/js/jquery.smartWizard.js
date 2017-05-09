@@ -10,7 +10,6 @@
  * http://www.techlaboratory.net
  * http://tech-laboratory.blogspot.com
  */
-
 function SmartWizard(target, options) {
     this.target       = target;
     this.options      = options;
@@ -101,15 +100,15 @@ function SmartWizard(target, options) {
                     optradio_alrenativa_4 = "optradio_alrenativa_4_"+i,
                     optradio_alrenativa_5 = "optradio_alrenativa_5_"+i;
 
-                if(document.getElementById(optradio_alrenativa_1).value == "on")
+                if(document.getElementById(optradio_alrenativa_1).checked)
                     corretas.push("alternativa 1");
-                else if(document.getElementById(optradio_alrenativa_2).value == "on")
+                else if(document.getElementById(optradio_alrenativa_2).checked)
                     corretas.push("alternativa 2");
-                else if(document.getElementById(optradio_alrenativa_3).value == "on")
+                else if(document.getElementById(optradio_alrenativa_3).checked)
                     corretas.push("alternativa 3");
-                else if(document.getElementById(optradio_alrenativa_4).value == "on")
+                else if(document.getElementById(optradio_alrenativa_4).checked)
                     corretas.push("alternativa 4");
-                else if(document.getElementById(optradio_alrenativa_5).value == "on")
+                else if(document.getElementById(optradio_alrenativa_5).checked)
                     corretas.push("alternativa 5");
             }
 
@@ -142,9 +141,16 @@ function SmartWizard(target, options) {
                'perguntas_array': perguntas,
                'alternativas_array': alternativas
            }, function(result){
-               console.log(result);
-               //if(result)
-               // window.location.assign("../cadastro/cadastro_jogo.php");
+               if(result == "inseriu"){
+
+                   window.location.assign("../cadastro/cadastro_jogo.php?dadossalvos=true");
+               }
+               else{
+                   window.location.assign("../cadastro/cadastro_jogo.php?dadossalvos=false");
+
+               }
+
+
             });
 
             if(!$(this).hasClass('buttonDisabled')){
