@@ -25,15 +25,16 @@ require_once "../conecta.php" ;
       $resultado_cpf = mysqli_query($con, $sql_cpf);
       $existe_cpf = mysqli_num_rows($resultado_cpf);
          if ($existe_cpf) {
-           //echo "<script language='javascript' type='text/javascript'>swal('Usuario ja existente', '', 'error');</script>";
-          //}
+        //   echo "<script language='javascript' type='text/javascript'>swal('Usuario ja existente', '', 'error');</script>";
+          }
           else {
-          //  $sql = "insert into professor (Nome, CPF, Email, Curriculo, Instituicao, Titulacao, Senha ) value
-          //  ('$nome', '$cpf', $email, '$curriculo', '$instituicao', '$titulo', '$senha' )";
-          //  $insert = mysqli_query($con ,$sql);
+            //$sql = "insert into professor (Nome, CPF, Email, Curriculo, Instituicao, Titulacao, Senha ) value
+            //('$nome', '$cpf', $email, '$curriculo', '$instituicao', '$titulo', '$senha' )";
+            //$insert = mysqli_query($con ,$sql);
             if ($insert) {
               echo "inseriu";
-          }else {
+          }
+          else {
             echo "não";
             echo mysqli_error($con);
           }
@@ -55,8 +56,8 @@ require_once "../conecta.php" ;
            //echo "<script language='javascript' type='text/javascript'>swal('Usuario ja existente', '', 'error');</script>";
           }
           else {
-            $sql = "insert into jogador (Nome, Instituicao, Equipe, CPF, Email, Senha, ) value
-            ('$nome', '$instituicao', '$equipe', '$cpf', '$email', $senha', )";
+            $sql = "insert into jogador (Nome, Instituicao, Equipe, CPF, Email, Senha) value
+            ('$nome', '$instituicao', '$equipe', '$cpf', '$email', $senha' )";
             $insert = mysqli_query($con ,$sql);
             if ($insert) {
               echo "inseriu";
