@@ -73,7 +73,7 @@
               </div>
               <div class="form-group" id="divTitulo" style="display: none">
                 <label class="control-label" for="exampleInputTitulo">Titulo</label>
-                <input class="form-control" id="exampleInputTitulo" name="cadastro_input_titulo" placeholder="Digite o seu Titulo" type="url">
+                <input class="form-control" id="exampleInputTitulo" name="cadastro_input_titulo" placeholder="Digite o seu Titulo" type="text">
               </div>
               <div class="form-group" id="divAluno">
                 <label class="control-label" for="exampleInputInstituicao">Instituição</label>
@@ -165,18 +165,5 @@
                          }
                      }
     </script>
-    <!--?php/* require_once "conecta.php" ; require_once "cadastroDAO.php";
-    $profissao=$ _POST[ 'optradio_cadastro_profissao']; $nome=$ _POST[ 'cadastro_input_nome'];
-    $cpf=$ _POST[ 'cadastro_input_cpf']; $curriculo=$ _POST[ 'cadastro_input_curriculo'];
-    $instituicao=$ _POST[ 'cadastro_input_instituicao']; $email=$ _POST[ 'cadastro_input_email'];
-    $senha=$ _POST[ 'cadastro_input_senha']; $confirma_senha=$ _POST[ 'cadastro_input_confirma_senha'];
-    $cpf=$ _POST[ 'cadastro_input_cpf']; $email=$ _POST[ 'cadastro_input_email'];
-    $sql_cpf="select * from usuario where cpf=' $cpf'" ; $resultado_cpf=m ysqli_query($sql_cpf,
-    $con); $existe_cpf=m ysqli_num_rows($resultado_cpf); if ($existe_cpf) {
-    //echo "<script language='javascript' type='text/javascript'-->swal('Usuario ja existente', '', 'error');"; } else { $cadastrodao=n ew
-    cadastroDAO(); $saida=$ cadastrodao-&gt;inserirUsuario($profissao, $nome,
-    $cpf, $curriculo, $instituicao, $email, $senha); if ($saida) { echo "
-    <script language="javascript" type="text/javascript">swal('Usuario cadastrado', '', 'success');</script>"; } } $sql_email =
-      "select * from usuario where email = '$email'";*/ ?&gt;
 
 </body></html>
