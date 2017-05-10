@@ -20,6 +20,7 @@ require_once "../conecta.php" ;
       $resultado_cpf = mysqli_query($con, $sql_cpf);
       $existe_cpf = mysqli_num_rows($resultado_cpf);
          if ($existe_cpf) {
+
            //echo "<script language='javascript' type='text/javascript'>swal('Usuario ja existente', '', 'error');</script>";
           }
           else {
@@ -36,7 +37,7 @@ require_once "../conecta.php" ;
 
 
     else if($profissao == "radio_aluno"){
-      
+
       $sql_cpf = "select * from Jogador where CPF = '$cpf'";
       $resultado_cpf = mysqli_query($con, $sql_cpf);
       $existe_cpf = mysqli_num_rows($resultado_cpf);
@@ -47,19 +48,20 @@ require_once "../conecta.php" ;
            //echo "<script language='javascript' type='text/javascript'>swal('Usuario ja existente', '', 'error');</script>";
           }
           else {
-        
+
             if($existe_email){
 
             }else{
-             
+
               $sql = "insert into Jogador (Nome, Instituicao, Equipe, CPF, Email, Senha ) value
             ('$nome', '$instituicao', '$equipe', '$cpf', '$email', '$senha')";
-            $insert = mysqli_query($con ,$sql);  
+            $insert = mysqli_query($con ,$sql);
              if ($insert) {
               header("Location: ../login.html");
               }else {
               echo "não";
               echo mysqli_error($con);
+
           }
             }
         }

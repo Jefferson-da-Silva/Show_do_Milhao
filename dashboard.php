@@ -92,7 +92,7 @@ session_start();
               <div class='container'>
                 <div class='row'>
                   <div class='col-md-3' align='center'>
-                    <a href='#' style='text-decoration: none'><img src='img/start_game.png' class='img-circle img-responsive' width='200'>
+                    <a href='cadastro/cadastro_jogo.php' style='text-decoration: none'><img src='img/start_game.png' class='img-circle img-responsive' width='200'>
                     <h1 style='font-family: Lobster'>Criar Jogo</h1>
                   </a>
                   </div>
