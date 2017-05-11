@@ -1,14 +1,6 @@
 <html>
 <?php
-session_start();
-  if((!isset ($_SESSION['email'])==true) and(!isset($_SESSION['senha'])==true)){
-    unset($_SESSION['email']);
-    unset($_SESSION['senha']);
-    header("Location: login.html");
-  }
-  $emailLogado = $_SESSION['email'];
-  $senhaLogado = $_SESSION['senha'];
-  $profissaoLogado = $_SESSION['profissao'];
+require "hasSession.php";
 
 ?>
 <head>
@@ -19,6 +11,8 @@ session_start();
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+    <title>Show do Milhão</title>
+    <link rel="icon" href="img/show_logo.png" />
 
   </head><body>
     <div class="navbar navbar-default navbar-static-top">
@@ -32,7 +26,6 @@ session_start();
           </button>
         </div>
         <div class="collapse navbar-collapse" id="navbar-ex-collapse">
-          <ul class="nav navbar-nav navbar-right"></ul>
           <ul class="lead nav navbar-left navbar-nav">
             <li>
               <a href="#">Show do Milhão <img src="img/show_logo.png" width="20"></a>
@@ -44,7 +37,7 @@ session_start();
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" arfa-expanded="false" contenteditable="true"><i class="et-down fa fa-2x fa-user text-primary"><br></i></a>
                 <ul class="dropdown-menu" role="menu">
                 <li>
-                   <?php echo '<a href=atualizar/alterar_aluno.php?email='. $_SESSION['email'].' > Editar Dados</a>'; ?>
+                   <a href=atualizar/alterar_a.php> Editar Dados</a>
                 </li>
                  <li class="divider"></li>
                   <li>
@@ -81,7 +74,7 @@ session_start();
                   </a>
                   </div>
                   <div class='col-md-3' align='center'>
-                    <a href='#' style='text-decoration: none'><img src='img/icon_ranking.png' class='img-circle img-responsive' width='200'>
+                    <a href='cadastro/ranking.php' style='text-decoration: none'><img src='img/icon_ranking.png' class='img-circle img-responsive' width='200'>
                     <h1 style='font-family: Lobster'>Ranking</h1></a>
                   </div>
                   <div class='col-md-3' align='center'>

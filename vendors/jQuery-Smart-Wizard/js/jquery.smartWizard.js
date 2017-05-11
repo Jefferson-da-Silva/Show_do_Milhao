@@ -68,15 +68,18 @@ function SmartWizard(target, options) {
         });
         $($this.buttons.finish).click(function() {
 
-            var curso       = document.getElementById('selecionar_curso').value;
-            var disciplina  = document.getElementById('selecionar_disciplina').value;
-            var assunto     = document.getElementById('selecionar_assunto').value;
-            var visibilidade = "";
-            var area = "";
+            var nomeCurso           = document.getElementById('selecionar_curso').value;
+            var emailProfessor      = window.localStorage.getItem('email');
+            var nomeJogo            = document.getElementById('InputNomeJogo').value;
+            var visibilidade        = "";
 
             var corretas = [];
             var perguntas = [];
-            var alternativas = [];
+            var alternativas1 = [];
+            var alternativas2 = [];
+            var alternativas3 = [];
+            var alternativas4 = [];
+            var alternativas5 = [];
 
             for( var i = 1; i < 20; i++){
                 var inputArea = "inputextArea"+i;
@@ -88,27 +91,27 @@ function SmartWizard(target, options) {
                     inputAlternativa4 = "inputAlternativa4_"+ i,
                     inputAlternativa5 = "inputAlternativa5_"+i;
 
-                alternativas.push(document.getElementById(inputAlternativa1).value);
-                alternativas.push(document.getElementById(inputAlternativa2).value);
-                alternativas.push(document.getElementById(inputAlternativa3).value);
-                alternativas.push(document.getElementById(inputAlternativa4).value);
-                alternativas.push(document.getElementById(inputAlternativa5).value);
+                alternativas1.push(document.getElementById(inputAlternativa1).value);
+                alternativas2.push(document.getElementById(inputAlternativa2).value);
+                alternativas3.push(document.getElementById(inputAlternativa3).value);
+                alternativas4.push(document.getElementById(inputAlternativa4).value);
+                alternativas5.push(document.getElementById(inputAlternativa5).value);
 
-                var optradio_alrenativa_1 = "optradio_alrenativa_1_"+i,
-                    optradio_alrenativa_2 = "optradio_alrenativa_2_"+i,
-                    optradio_alrenativa_3 = "optradio_alrenativa_3_"+i,
-                    optradio_alrenativa_4 = "optradio_alrenativa_4_"+i,
-                    optradio_alrenativa_5 = "optradio_alrenativa_5_"+i;
+                var optradio_alternativa_1 = "optradio_alrenativa_1_"+i,
+                    optradio_alternativa_2 = "optradio_alrenativa_2_"+i,
+                    optradio_alternativa_3 = "optradio_alrenativa_3_"+i,
+                    optradio_alternativa_4 = "optradio_alrenativa_4_"+i,
+                    optradio_alternativa_5 = "optradio_alrenativa_5_"+i;
 
-                if(document.getElementById(optradio_alrenativa_1).checked)
+                if(document.getElementById(optradio_alternativa_1).checked)
                     corretas.push("alternativa 1");
-                else if(document.getElementById(optradio_alrenativa_2).checked)
+                else if(document.getElementById(optradio_alternativa_2).checked)
                     corretas.push("alternativa 2");
-                else if(document.getElementById(optradio_alrenativa_3).checked)
+                else if(document.getElementById(optradio_alternativa_3).checked)
                     corretas.push("alternativa 3");
-                else if(document.getElementById(optradio_alrenativa_4).checked)
+                else if(document.getElementById(optradio_alternativa_4).checked)
                     corretas.push("alternativa 4");
-                else if(document.getElementById(optradio_alrenativa_5).checked)
+                else if(document.getElementById(optradio_alternativa_5).checked)
                     corretas.push("alternativa 5");
             }
 
@@ -118,28 +121,36 @@ function SmartWizard(target, options) {
 
             if(document.getElementById('optradio1').value == "on")
                 visibilidade = "Publico";
-            else if(document.getElementById('optradio2').value == "on");
+            else if(document.getElementById('optradio2').value == "on")
                 visibilidade = "Privado";
 
-            if(document.getElementById('optradio-grandeArea1').value == "on")
-                area = "Exatas";
-            else if(document.getElementById('optradio-grandeArea2').value == "on")
-                area = "Humanas";
-            else if(document.getElementById('optradio-grandeArea3').value == "on")
-                area = "Saúde";
 
             //CAPTURA OS DADOS DAS PERGUNTAS
 
 
+            console.log("nomeCurso: "         + nomeCurso+
+                        "\nnomeJogo: "        + nomeJogo +
+                        "\nvisibilidade: "    + visibilidade+
+                        "\ncorretas_array: "  + corretas+
+                        "\nperguntas_array: " + perguntas+
+                        "\nalternativas1"     + alternativas1+
+                        "\nalternativas2: "   + alternativas2+
+                        "\nalternativas3: "   + alternativas3+
+                        "\nalternativas4: "   + alternativas4+
+                        "\nalternativas5: "   + alternativas5);
+
            $.post("../cadastro/cadastrar_perguntas.php", {
-               'curso':curso,
-               'disciplina': disciplina,
-               'assunto': assunto,
+               'nomeCurso':nomeCurso,
+               'nomeJogo': nomeJogo,
+               'emailProfessor': emailProfessor,
                'visibilidade': visibilidade,
-               'area':area,
                'corretas_array': corretas,
                'perguntas_array': perguntas,
-               'alternativas_array': alternativas
+               'alternativas1_array': alternativas1,
+               'alternativas2_array': alternativas2,
+               'alternativas3_array': alternativas3,
+               'alternativas4_array': alternativas4,
+               'alternativas5_array': alternativas5
            }, function(result){
                if(result == "inseriu"){
 
@@ -520,7 +531,7 @@ $.fn.smartWizard.defaults = {
     contentURL:null, // content url, Enables Ajax content loading
     contentCache:true, // cache step contents, if false content is fetched always from ajax url
     cycleSteps: false, // cycle step navigation
-    enableFinishButton: false, // make finish button enabled always
+    enableFinishButton: true, // make finish button enabled always
 	hideButtonsOnDisabled: false, // when the previous/next/finish buttons are disabled, hide them instead?
     errorSteps:[],    // Array Steps with errors
     labelNext:'Próximo',
