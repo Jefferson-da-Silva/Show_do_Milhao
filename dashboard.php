@@ -37,7 +37,7 @@ require "hasSession.php";
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" arfa-expanded="false" contenteditable="true"><i class="et-down fa fa-2x fa-user text-primary"><br></i></a>
                 <ul class="dropdown-menu" role="menu">
                 <li>
-                   <?php echo '<a href=atualizar/alterar_aluno.php?email='. $_SESSION['email'].' > Editar Dados</a>'; ?>
+                   <a href=atualizar/alterar_a.php> Editar Dados</a>
                 </li>
                  <li class="divider"></li>
                   <li>
