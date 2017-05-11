@@ -1,3 +1,25 @@
+<!DOCTYPE html>
+
+<?php
+
+$var = $_GET['validacao'];
+if($var == "true"){
+    echo " <script type='text/javascript'>
+        function startSuccess(){
+            swal('Dados Salvos!', '', 'success');
+        };
+        window.onload=startSuccess;
+        </script>";
+}else if($var == "cpf_false"){
+    echo " <script type='text/javascript'>
+        function startError(){
+            swal('Erro ao tentar salvar Salvar!', 'CPF invalido!', 'error');
+        };
+        window.onload=startError;
+        </script>";
+}
+?>
+
 <html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +30,8 @@
     <link href="../css/plugins/chosen/chosen.css" rel="stylesheet">
     <link href="../css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
     <link href="../css/plugins/iCheck/custom.css" rel="stylesheet">
+    <script src="../sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../sweetalert/dist/sweetalert.css">
   </head><body>
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">

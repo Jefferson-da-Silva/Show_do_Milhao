@@ -15,21 +15,31 @@ if((!isset ($_SESSION['email'])) and (!isset($_SESSION['senha']))){
 $emailLogado = $_SESSION['email'];
 $senhaLogado = $_SESSION['senha'];
 $profissaoLogado = $_SESSION['profissao'];
+echo "<script>window.localStorage.setItem('email', '$emailLogado');</script>";
 
 ?>
 
 <?php
-if(isset($_GET['dadossalvos']) == "true" ){
+
+$var = $_GET['dadossalvos'];
+if($var == "true"){
     echo " <script type='text/javascript'>
         function startSuccess(){
             swal('Jogo Salvo!', '', 'success');
         };
         window.onload=startSuccess;
         </script>";
-}else if(isset($_GET['dadossalvos']) == "false"){
+}else if($var == "false"){
     echo " <script type='text/javascript'>
         function startError(){
             swal('Erro ao tentar salvar jogo!', '', 'error');
+        };
+        window.onload=startError;
+        </script>";
+}else if($var == "nomeJogo_false"){
+    echo " <script type='text/javascript'>
+        function startError(){
+            swal('Erro ao tentar salvar jogo!', 'Nome já existente!', 'error');
         };
         window.onload=startError;
         </script>";
@@ -295,6 +305,7 @@ if(isset($_GET['dadossalvos']) == "true" ){
                 <div class="row">
                     <div class="col-md-7">
                         <form role="form" method="" action="">
+
                             <div class="form-group">
                                 <div class="form-group">
                                     <label class="control-label">Visibilidade</label>
@@ -316,6 +327,10 @@ if(isset($_GET['dadossalvos']) == "true" ){
                                     <label class="radio-inline">
                                         <input type="radio" name="optradio-grandeArea" id="optradio-grandeArea3" onclick="areaCliked(this)" value="Saúde">Saúde</label>
                                 </div>
+                            </div>
+                            <div class="form-group" id="divNomeJogo">
+                                <label class="control-label" for="InputNomeJogo">Nome do Jogo</label>
+                                <input class="form-control" id="InputNomeJogo" name="cadastro_input_nomeJogo" placeholder="Digite o nome do jogo" type="text" required="">
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Curso</label>
