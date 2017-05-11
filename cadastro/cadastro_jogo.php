@@ -19,14 +19,14 @@ $profissaoLogado = $_SESSION['profissao'];
 ?>
 
 <?php
-if($_GET['dadossalvos'] == "true" ){
+if(isset($_GET['dadossalvos']) == "true" ){
     echo " <script type='text/javascript'>
         function startSuccess(){
             swal('Jogo Salvo!', '', 'success');
         };
         window.onload=startSuccess;
         </script>";
-}else if($_GET['dadossalvos'] == "false"){
+}else if(isset($_GET['dadossalvos']) == "false"){
     echo " <script type='text/javascript'>
         function startError(){
             swal('Erro ao tentar salvar jogo!', '', 'error');
