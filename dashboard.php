@@ -1,7 +1,15 @@
 <html>
 <?php
-require "hasSession.php";
-
+session_start();
+if((!isset ($_SESSION['email'])) and (!isset($_SESSION['senha']))){
+unset($_SESSION['email']);
+unset($_SESSION['senha']);
+unset($_SESSION['profissao']);
+header("Location: login.html");
+}
+$emailLogado = $_SESSION['email'];
+$senhaLogado = $_SESSION['senha'];
+$profissaoLogado = $_SESSION['profissao'];
 ?>
 <head>
     <meta charset="utf-8">
@@ -69,7 +77,7 @@ require "hasSession.php";
               <div class='container'>
                 <div class='row'>
                   <div class='col-md-3' align='center'>
-                    <a href='#' style='text-decoration: none'><img src='img/start_game.png' class='img-circle img-responsive' width='200'>
+                    <a href='cadastro/cadastro_jogo.php' style='text-decoration: none'><img src='img/start_game.png' class='img-circle img-responsive' width='200'>
                     <h1 style='font-family: Lobster'>Selecionar Jogo</h1>
                   </a>
                   </div>
