@@ -38,6 +38,22 @@ session_start();
               <a href="#">Show do Milhão <img src="img/show_logo.png" width="20"></a>
             </li>
           </ul>
+            <ul class="nav navbar-nav navbar-right">
+            <li></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" arfa-expanded="false" contenteditable="true"><i class="et-down fa fa-2x fa-user text-primary"><br></i></a>
+                <ul class="dropdown-menu" role="menu">
+                <li>
+                   <?php echo '<a href=atualizar/alterar_aluno.php?email='. $_SESSION['email'].' > Editar Dados</a>'; ?>
+                </li>
+                 <li class="divider"></li>
+                  <li>
+                    <a href="logout.php" >Sair</a>
+                   </li>
+                  </ul>
+            </li>
+            </ul>
+
         </div>
       </div>
     </div>
