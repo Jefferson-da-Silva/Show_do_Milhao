@@ -3,6 +3,7 @@
 
     	if(isset($_POST['botao_cadastrar_curso'])) {
             $curso = $_POST['nome_do_curso'];
+            $grandeArea = $_POST['grande_area'];
             $sql_curso = "select * from Curso where Descricao_Curso = '$curso'";
             $resultado_curso = mysqli_query($con, $sql_curso);
             $existe_curso = mysqli_num_rows($resultado_curso);
@@ -12,7 +13,7 @@
                 echo "<script language='javascript' type='text/javascript'>swal('Usuario ja existente', '', 'error');</script>";
             } else {
 
-                $sql = "insert into Curso (Descricao_Curso) value ('$curso')";
+                $sql = "insert into Curso (Descricao_Curso, Grande_Area) value ('$curso', '$grandeArea')";
                 $insert = mysqli_query($con, $sql);
                 if ($insert) {
                     header("Location: cadastro_jogo.php");

@@ -56,13 +56,201 @@ if($_GET['dadossalvos'] == "true" ){
         <!-- NProgress -->
         <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
         <script src="../sweetalert/dist/sweetalert.min.js"></script>
         <link rel="stylesheet" type="text/css" href="../sweetalert/dist/sweetalert.css">
 
+    <script>
+        function areaCliked(myRadio){
+            var selectCurso = document.getElementById("selecionar_curso");
+            var optGArea = document.getElementById('tempVar').value = myRadio.value;
 
+            limparSelectCurso();
+
+            $.post("searchCurso.php", {'area': optGArea},
+                function(result){
+                    if(result != "Nenhum Curso Cadastrado") {
+                        var array = result.split(",");
+                        array = array.filter(function (entry) {
+                            return entry.trim() != "";
+                        });
+
+                        for(i = 0; i < array.length; i++){
+                            if(i == 0){
+                                var opt = document.createElement("option");
+                                opt.value = "";
+                                opt.text = "Selecione o curso";
+                                opt.selected = "true";
+                                opt.disabled = "true";
+                                selectCurso.add(opt, selectCurso.options[i]);
+                            }
+                            var opt0 = document.createElement("option");
+                            opt0.value = array[i];
+                            opt0.text = array[i];
+                            selectCurso.add(opt0, selectCurso.options[i]);
+                        }
+
+                    }
+                    else {
+                        var array = result.split(",");
+                        array = array.filter(function (entry) {
+                            return entry.trim() != "";
+
+                            var opt = document.createElement("option");
+                            opt.value = "";
+                            opt.text = "Nenhum Curso Cadastrado";
+                            opt.selected = "true";
+                            opt.disabled = "true";
+                            selectCurso.add(opt, selectCurso.options[0]);
+                        });
+
+                    }
+                });
+
+            document.getElementById('cadastrar_curso').style.display = "inline";
+            document.getElementById('selecionar_curso').disabled = false;
+
+        function limparSelectCurso(){
+            while(selectCurso.length){
+                selectCurso.remove(0)
+            }
+        };
+        }
+
+        function changeCurso(){
+            var nomeCurso = document.getElementById('selecionar_curso').value;
+            var selectDisciplina = document.getElementById("selecionar_disciplina");
+
+            limparSelectDisciplina();
+
+            $.post("searchDisciplina.php", {'nome_curso': nomeCurso},
+                function(result){
+                    if(result != "Nenhuma Disciplina Cadastrada") {
+                        console.log(result);
+                        var array = result.split(",");
+                        array = array.filter(function (entry) {
+                            return entry.trim() != "";
+                        });
+
+                        for(i = 0; i < array.length; i++){
+                            if(i == 0){
+                                var opt = document.createElement("option");
+                                opt.value = "";
+                                opt.text = "Selecione a Disciplina";
+                                opt.selected = "true";
+                                opt.disabled = "true";
+                                selectDisciplina.add(opt, selectDisciplina.options[i]);
+                            }
+                            var opt0 = document.createElement("option");
+                            opt0.value = array[i];
+                            opt0.text = array[i];
+                            selectDisciplina.add(opt0, selectDisciplina.options[i]);
+                        }
+
+                    }
+                    else {
+                        console.log(result);
+                        var array = result.split(",");
+                        array = array.filter(function (entry) {
+                            return entry.trim() != "";
+                        });
+
+                        var opt = document.createElement("option");
+                        opt.value = "";
+                        opt.text = "Nenhuma Disciplina Cadastrada";
+                        opt.selected = "true";
+                        opt.disabled = "true";
+                        selectDisciplina.add(opt, selectDisciplina.options[0]);
+
+                    }
+                });
+
+
+            function limparSelectDisciplina(){
+                while(selectDisciplina.length){
+                    selectDisciplina.remove(0)
+                }
+            };
+
+            document.getElementById('nome_curso'). value = nomeCurso;
+            document.getElementById('cadastrar_disciplina').style.display = "inline";
+            document.getElementById('selecionar_disciplina').disabled = false;
+        }
+
+        function changeDisciplina(){
+            var nomeCurso = document.getElementById('selecionar_curso').value;
+            var nomeDisciplina = document.getElementById('selecionar_disciplina').value;
+            var selectAssunto = document.getElementById("selecionar_assunto");
+
+            console.log(nomeCurso + " - " +nomeDisciplina);
+
+            limparSelectAssunto();
+
+            $.post("searchAssunto.php", {'nome_curso': nomeCurso, 'nome_disciplina': nomeDisciplina},
+                function(result){
+                    if(result != "Nenhuma Assunto Cadastrado") {
+                        console.log(result);
+                        var array = result.split(",");
+                        array = array.filter(function (entry) {
+                            return entry.trim() != "";
+                        });
+
+                        for(i = 0; i < array.length; i++){
+                            if(i == 0){
+                                var opt = document.createElement("option");
+                                opt.value = "";
+                                opt.text = "Selecione o Assunto";
+                                opt.selected = "true";
+                                opt.disabled = "true";
+                                selectAssunto.add(opt, selectAssunto.options[i]);
+                            }
+                            var opt0 = document.createElement("option");
+                            opt0.value = array[i];
+                            opt0.text = array[i];
+                            selectAssunto.add(opt0, selectAssunto.options[i]);
+                        }
+
+                    }
+                    else {
+                        console.log(result);
+                        var array = result.split(",");
+                        array = array.filter(function (entry) {
+                            return entry.trim() != "";
+                        });
+
+                        var opt = document.createElement("option");
+                        opt.value = "";
+                        opt.text = "Nenhuma Assunto Cadastrado";
+                        opt.selected = "true";
+                        opt.disabled = "true";
+                        selectAssunto.add(opt, selectAssunto.options[0]);
+
+                    }
+                });
+
+
+            function limparSelectAssunto(){
+                while(selectAssunto.length){
+                    selectAssunto.remove(0)
+                }
+            };
+
+            document.getElementById('nome_curso_assunto'). value = nomeCurso;
+            document.getElementById('nome_disciplina_assunto'). value = nomeDisciplina;
+            document.getElementById('cadastrar_assunto').style.display = "inline";
+            document.getElementById('selecionar_assunto').disabled = false;
+        }
+        function changeAssunto(){
+            document.getElementById('cadastrar_perguntas').style.display = "inline";
+        }
+
+
+
+    </script>
 
 </head><body class="" data-spy="scroll">
-
+        <p style="display: none" id="tempVar"></p>
         <div class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
@@ -122,81 +310,36 @@ if($_GET['dadossalvos'] == "true" ){
                                 </div>
                                 <div>
                                     <label class="radio-inline">
-                                        <input type="radio" name="optradio-grandeArea" id="optradio-grandeArea1">Exatas</label>
+                                        <input type="radio" name="optradio-grandeArea" id="optradio-grandeArea1" onclick="areaCliked(this)" value="Exatas">Exatas</label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="optradio-grandeArea" id="optradio-grandeArea2">Humanas</label>
+                                        <input type="radio" name="optradio-grandeArea" id="optradio-grandeArea2" onclick="areaCliked(this)" value="Humanas">Humanas</label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="optradio-grandeArea" id="optradio-grandeArea3">Saúde</label>
+                                        <input type="radio" name="optradio-grandeArea" id="optradio-grandeArea3" onclick="areaCliked(this)" value="Saúde">Saúde</label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Curso</label>
 
-                                <select class="chosen-select form-control" name="selecionar_curso" id="selecionar_curso" tabindex="2">
-                                    <option value="">Selecione o curso</option>
-                                    <?php
-                                    require_once "../conecta.php" ;
-
-                                    $sql_curso = "select * from Curso";
-                                    $resultado_curso = mysqli_query($con, $sql_curso);
-
-                                    while ($res = mysqli_fetch_array($resultado_curso)) {
-                                        $value = $res['Descricao_Curso'];
-                                        echo "
-                                        <option value='$value'>$value</option>";
-                                    }
-                                    ?>
-                                </select>
+                                <select class="chosen-select form-control" name="selecionar_curso" id="selecionar_curso" tabindex="2" disabled onchange="changeCurso()"></select>
                                 <br>
-                                <a class="btn btn-danger btn-sm" data-toggle="modal" href="#modalCurso">Cadastre um curso
+                                <a id="cadastrar_curso" class="btn btn-danger btn-sm" data-toggle="modal" href="#modalCurso" style="display: none">Cadastre um curso
                   <i class="fa fa-fw fa-plus"></i></a>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Disciplina</label>
-                                <?php
-
-                                ?>
-                                <select class="chosen-select form-control" id="selecionar_disciplina" tabindex="2" disabled>
-                                    <option value="">Selecione a disciplina</option>
-                                    <?php
-                                    require_once "../conecta.php" ;
-
-                                    $sql_curso = "select * from Disciplina";
-                                    $resultado_curso = mysqli_query($con, $sql_curso);
-
-                                    while ($res = mysqli_fetch_array($resultado_curso)) {
-                                        $value = $res['Descricao_Disciplina'];
-                                        echo "
-                                        <option value='$value'>$value</option>";
-                                    }
-                                    ?>
-                                </select>
+                                <select class="chosen-select form-control" name="selecionar_disciplina" id="selecionar_disciplina" tabindex="2" disabled onchange="changeDisciplina()"></select>
                                 <br>
-                                <a class="btn btn-danger btn-sm" data-toggle="modal" href="#modalDisciplina">Cadastre uma disciplina
+                                <a id="cadastrar_disciplina" class="btn btn-danger btn-sm" data-toggle="modal" href="#modalDisciplina" style="display: none">Cadastre uma disciplina
                   <i class="fa fa-fw fa-plus"></i></a>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Assunto</label>
-                                <select class="chosen-select form-control" name="selecionar_assunto"  id="selecionar_assunto" tabindex="2" disabled>
-                                    <option value="">Selecione o assunto</option>
-                                    <?php
-                                    require_once "../conecta.php" ;
-
-                                    $sql_curso = "select * from Assunto";
-                                    $resultado_curso = mysqli_query($con, $sql_curso);
-
-                                    while ($res = mysqli_fetch_array($resultado_curso)) {
-                                        $value = $res['Descricao_Assunto'];
-                                        echo "
-                                        <option value='$value'>$value</option>";
-                                    }
-                                    ?>
-                                </select>
+                                <select class="chosen-select form-control" name="selecionar_assunto"  id="selecionar_assunto" tabindex="2" disabled onchange="changeAssunto()"></select>
                                 <br>
-                                <a class="btn btn-danger btn-sm" data-toggle="modal" href="#modalAssunto">Cadastre um assunto
+                                <a id="cadastrar_assunto" class="btn btn-danger btn-sm" data-toggle="modal" href="#modalAssunto" style="display: none">Cadastre um assunto
                   <i class="fa fa-fw fa-plus"></i></a>
                             </div>
-                            <a class="btn btn-block btn-primary btn-sm" data-toggle="modal" href="#modalPergunta">Cadastrar perguntas  <i class="fa fa-fw fa-list-alt"></i></a>
+                            <a id="cadastrar_perguntas"  style="display: none" class="btn btn-block btn-primary btn-sm" data-toggle="modal" href="#modalPergunta">Cadastrar perguntas  <i class="fa fa-fw fa-list-alt"></i></a>
                             <br>
 
                         </form>
@@ -224,7 +367,7 @@ if($_GET['dadossalvos'] == "true" ){
                                                           checkboxClass: 'icheckbox_square-green',
                                                           radioClass: 'iradio_square-green'
                                                       });
-                        
+
                                                       var config = {
                                                               '.chosen-select'           : {},
                                                               '.chosen-select-deselect'  : {allow_single_deselect:true},
@@ -264,6 +407,16 @@ if($_GET['dadossalvos'] == "true" ){
                                 <label class="control-label" for="exampleInputEmail1">Nome do Curso</label>
                                 <input class="form-control" name="nome_do_curso" placeholder="Digite o nome do curso" type="text">
                             </div>
+                            <div class="form-group">
+                                <label class="control-label" for="exampleInputGrandeArea">Grande Area</label>
+                                <label class="control-label">Assunto</label>
+                                <select class="chosen-select form-control"  name="grande_area"  id="selecionar_assunto" tabindex="2">
+                                    <option value="" disabled selected>Selecione a Grande Area</option>
+                                    <option value="Exatas">Exatas</option>
+                                    <option value="Humanas">Humanas</option>
+                                    <option value="Saúde">Saúde</option>
+                                </select> </div>
+                            </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-success" name="botao_cadastrar_curso">Cadastrar
                                     <i class="fa fa-fw fa-save"></i>
@@ -284,6 +437,8 @@ if($_GET['dadossalvos'] == "true" ){
                     <div class="modal-body">
                         <form role="form" method="POST" action="cadastrar_disciplina.php">
                             <div class="form-group">
+
+                                <input style="display: none" class="form-control" name="nome_curso" id="nome_curso"  type="text">
                                 <label class="control-label" for="exampleInputEmail1">Nome da disciplina</label>
                                 <input class="form-control" name="nome_da_disciplina" placeholder="Digite o nome da disciplina" type="text">
                             </div>
@@ -307,6 +462,8 @@ if($_GET['dadossalvos'] == "true" ){
                     <div class="modal-body">
                         <form role="form" method="POST" action="cadastrar_assunto.php">
                             <div class="form-group">
+                                <input style="display: none" class="form-control" name="nome_curso_assunto" id="nome_curso_assunto"  type="text">
+                                <input style="display: none" class="form-control" name="nome_disciplina_assunto" id="nome_disciplina_assunto"  type="text">
                                 <label class="control-label" for="exampleInputEmail1">Nome do Assunto</label>
                                 <input class="form-control" id="exampleInputEmail1" name="nome_do_assunto" placeholder="Digite o nome do Assunto" type="text">
                             </div>
@@ -369,17 +526,19 @@ if($_GET['dadossalvos'] == "true" ){
         <script>
             $(document).ready(function() {
                         $('#wizard').smartWizard();
-            
+
                         $('#wizard_verticle').smartWizard({
                             transitionEffect: 'slide'
                         });
-            
+
                         $('.buttonNext').addClass('btn btn-success');
                         $('.buttonPrevious').addClass('btn btn-primary');
                         $('.buttonFinish').addClass('btn btn-default');
                     });
         </script>
         <!-- /jQuery Smart Wizard -->
-    
+
+
+
 
 </body></html>

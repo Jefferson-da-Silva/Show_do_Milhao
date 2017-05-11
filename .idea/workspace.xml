@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="beb21b6e-b7fc-4a78-beb6-9792accf7541" name="Default" comment="" />
+    <list default="true" id="beb21b6e-b7fc-4a78-beb6-9792accf7541" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cadastro/searchAssunto.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cadastro/searchCurso.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cadastro/searchDisciplina.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql/show_do_milhao.mwb.bak" afterPath="$PROJECT_DIR$/sql/show_do_milhao.mwb.bak" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql/show_do_milhao.mwb" afterPath="$PROJECT_DIR$/sql/show_do_milhao.mwb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cadastro/cadastrar_assunto.php" afterPath="$PROJECT_DIR$/cadastro/cadastrar_assunto.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cadastro/cadastrar_curso.php" afterPath="$PROJECT_DIR$/cadastro/cadastrar_curso.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cadastro/cadastrar_disciplina.php" afterPath="$PROJECT_DIR$/cadastro/cadastrar_disciplina.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cadastro/cadastro_jogo.php" afterPath="$PROJECT_DIR$/cadastro/cadastro_jogo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="Show_do_Milhao.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -25,57 +36,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="dashboard.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard.php">
+      <file leaf-file-name="searchAssunto.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cadastro/searchAssunto.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-62.666668" vertical-offset="0" max-vertical-offset="3762">
-              <caret line="94" column="55" selection-start-line="94" selection-start-column="55" selection-end-line="94" selection-end-column="55" />
-              <folding>
-                <marker date="1494336917999" expanded="true" signature="2126:3588" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="2152:3575" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="2186:3560" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="2220:3543" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="2258:3524" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="2292:3503" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="2348:2609" placeholder="..." />
-                <marker date="1494336917999" expanded="false" signature="2389:2410" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="2411:2584" placeholder="..." />
-                <marker date="1494336917999" expanded="false" signature="2520:2540" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="2665:2901" placeholder="..." />
-                <marker date="1494336917999" expanded="false" signature="2706:2727" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="2728:2876" placeholder="..." />
-                <marker date="1494336917999" expanded="false" signature="2839:2859" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="2957:3190" placeholder="..." />
-                <marker date="1494336917999" expanded="false" signature="2998:3019" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="3020:3165" placeholder="..." />
-                <marker date="1494336917999" expanded="false" signature="3129:3149" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="3246:3480" placeholder="..." />
-                <marker date="1494336917999" expanded="false" signature="3296:3317" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="3318:3455" placeholder="..." />
-                <marker date="1494336917999" expanded="false" signature="3421:3441" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="3717:5204" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="3743:5191" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="3777:5176" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="3811:5159" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="3849:5140" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="3883:5119" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="3939:4220" placeholder="..." />
-                <marker date="1494336917999" expanded="false" signature="4005:4026" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="4027:4195" placeholder="..." />
-                <marker date="1494336917999" expanded="false" signature="4136:4156" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="4276:4517" placeholder="..." />
-                <marker date="1494336917999" expanded="false" signature="4317:4338" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="4339:4492" placeholder="..." />
-                <marker date="1494336917999" expanded="false" signature="4448:4468" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="4573:4806" placeholder="..." />
-                <marker date="1494336917999" expanded="false" signature="4614:4635" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="4636:4781" placeholder="..." />
-                <marker date="1494336917999" expanded="false" signature="4745:4765" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="4862:5096" placeholder="..." />
-                <marker date="1494336917999" expanded="false" signature="4912:4933" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="4934:5071" placeholder="..." />
-                <marker date="1494336917999" expanded="true" signature="5037:5057" placeholder="..." />
-              </folding>
+            <state vertical-scroll-proportion="-10.481482" vertical-offset="275" max-vertical-offset="1008">
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -83,17 +49,41 @@
       <file leaf-file-name="cadastro_jogo.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cadastro/cadastro_jogo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4090909" vertical-offset="2592" max-vertical-offset="7020">
-              <caret line="160" column="41" selection-start-line="160" selection-start-column="41" selection-end-line="160" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.07366985" vertical-offset="324" max-vertical-offset="9882">
+              <caret line="21" column="22" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="22" />
               <folding>
-                <marker date="1494342823258" expanded="true" signature="553:699" placeholder="..." />
-                <marker date="1494342823258" expanded="true" signature="586:645" placeholder="{...}" />
-                <marker date="1494342823258" expanded="true" signature="787:943" placeholder="..." />
-                <marker date="1494342823258" expanded="true" signature="818:891" placeholder="{...}" />
-                <marker date="1494342823258" expanded="true" signature="6237:6256" placeholder="select * fro..Curso..." />
-                <marker date="1494342823258" expanded="true" signature="7585:7609" placeholder="select * fro..Disciplina..." />
-                <marker date="1494342823258" expanded="true" signature="8898:8919" placeholder="select * fro..Assunto..." />
+                <marker date="1494465878892" expanded="true" signature="26982:26988" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cadastrar_disciplina.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cadastro/cadastrar_disciplina.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.0" vertical-offset="0" max-vertical-offset="720">
+              <caret line="18" column="5" selection-start-line="5" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="searchCurso.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cadastro/searchCurso.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="504">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="searchDisciplina.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cadastro/searchDisciplina.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="756">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="36" selection-end-column="2" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -116,12 +106,16 @@
         <option value="$PROJECT_DIR$/cadastro/cadastro_jogo.html" />
         <option value="$PROJECT_DIR$/build/css/custom.css" />
         <option value="$PROJECT_DIR$/cadastro/form_perguntas.php" />
-        <option value="$PROJECT_DIR$/cadastro/cadastrar_curso.php" />
-        <option value="$PROJECT_DIR$/cadastro/cadastrar_assunto.php" />
-        <option value="$PROJECT_DIR$/cadastro/cadastrar_disciplina.php" />
         <option value="$PROJECT_DIR$/cadastro/cadastrar_perguntas.php" />
         <option value="$PROJECT_DIR$/vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js" />
         <option value="$PROJECT_DIR$/dashboard.php" />
+        <option value="$PROJECT_DIR$/cadastro/cadastrar_curso.php" />
+        <option value="$PROJECT_DIR$/cadastro/search/searchCurso.php" />
+        <option value="$PROJECT_DIR$/cadastro/searchDisciplina.php" />
+        <option value="$PROJECT_DIR$/cadastro/searchCurso.php" />
+        <option value="$PROJECT_DIR$/cadastro/cadastrar_disciplina.php" />
+        <option value="$PROJECT_DIR$/cadastro/cadastrar_assunto.php" />
+        <option value="$PROJECT_DIR$/cadastro/searchAssunto.php" />
         <option value="$PROJECT_DIR$/cadastro/cadastro_jogo.php" />
       </list>
     </option>
@@ -131,10 +125,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="801" />
-    <option name="y" value="52" />
-    <option name="width" value="798" />
-    <option name="height" value="847" />
+    <option name="y" value="24" />
+    <option name="width" value="1600" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -159,6 +152,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -193,7 +187,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -205,6 +198,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cadastro" />
       <recent name="$PROJECT_DIR$/build" />
     </key>
   </component>
@@ -251,11 +245,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="801" y="52" width="798" height="847" extended-state="4" />
+    <frame x="0" y="24" width="1600" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24561404" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.220625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -297,13 +291,76 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1692" max-vertical-offset="3762">
+          <caret line="94" column="55" selection-start-line="94" selection-start-column="55" selection-end-line="94" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cadastro/cadastro_jogo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7416">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1494465878892" expanded="true" signature="26982:26988" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cadastro/cadastrar_curso.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="558">
+          <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
+          <folding>
+            <marker date="1494387952613" expanded="true" signature="-1:-1" placeholder="select * fro..Curso..." />
+            <marker date="1494387952613" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1494387952613" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1692" max-vertical-offset="3762">
+          <caret line="94" column="55" selection-start-line="94" selection-start-column="55" selection-end-line="94" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cadastro/cadastro_jogo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7020">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1494465878892" expanded="true" signature="26982:26988" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1692" max-vertical-offset="3762">
+          <caret line="94" column="55" selection-start-line="94" selection-start-column="55" selection-end-line="94" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cadastro/cadastro_jogo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7020">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1494465878892" expanded="true" signature="26982:26988" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9684">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -311,9 +368,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="594">
           <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-          <folding>
-            <marker date="1494303033115" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -328,7 +382,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2656" max-vertical-offset="5562">
           <caret line="162" column="22" selection-start-line="162" selection-start-column="22" selection-end-line="162" selection-end-column="22" />
-          <folding />
+          <folding>
+            <marker date="1494465878892" expanded="true" signature="26982:26988" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -336,9 +392,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8406">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -346,16 +399,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="162">
           <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
-          <folding>
-            <marker date="1494303033115" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conecta.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="773">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -394,13 +437,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cadastro/cadastrar_disciplina.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12278308" vertical-offset="0" max-vertical-offset="733">
-          <caret line="5" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sql/show_do_milhao.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.62240666" vertical-offset="0" max-vertical-offset="3726">
@@ -408,42 +444,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cadastro/cadastrar_curso.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5369318" vertical-offset="0" max-vertical-offset="704">
-          <caret line="21" column="17" selection-start-line="15" selection-start-column="16" selection-end-line="21" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cadastro/form_perguntas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="972" max-vertical-offset="2358">
-          <caret line="54" column="67" selection-start-line="54" selection-start-column="55" selection-end-line="54" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cadastro/ranking.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cadastro/cadastrar_assunto.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2556818" vertical-offset="0" max-vertical-offset="704">
-          <caret line="10" column="60" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5575679" vertical-offset="8965" max-vertical-offset="9738">
-          <caret line="522" column="29" selection-start-line="522" selection-start-column="29" selection-end-line="522" selection-end-column="29" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -451,88 +455,109 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.65147454" vertical-offset="0" max-vertical-offset="746">
           <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8372093" vertical-offset="1890" max-vertical-offset="9540">
+          <caret line="150" column="16" selection-start-line="142" selection-start-column="14" selection-end-line="150" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cadastro/cadastrar_curso.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46022728" vertical-offset="0" max-vertical-offset="704">
+          <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
           <folding>
-            <marker date="1494115753461" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Professor..." />
-            <marker date="1494115753461" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Jogador..." />
+            <marker date="1494387952613" expanded="true" signature="-1:-1" placeholder="select * fro..Curso..." />
+            <marker date="1494387952613" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1494387952613" expanded="true" signature="-1:-1" placeholder="insert into ..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conecta.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="704">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cadastro/cadastrar_perguntas.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28125" vertical-offset="0" max-vertical-offset="738">
-          <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
-          <folding>
-            <marker date="1494303033115" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-          </folding>
+        <state vertical-scroll-proportion="0.5625" vertical-offset="0" max-vertical-offset="738">
+          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cadastro/form_perguntas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09651475" vertical-offset="0" max-vertical-offset="2358">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-62.666668" vertical-offset="0" max-vertical-offset="3762">
-          <caret line="94" column="55" selection-start-line="94" selection-start-column="55" selection-end-line="94" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.6493861" vertical-offset="478" max-vertical-offset="3762">
+          <caret line="53" column="11" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cadastro/cadastrar_assunto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.1473397" vertical-offset="162" max-vertical-offset="1008">
+          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
           <folding>
-            <marker date="1494336917999" expanded="true" signature="2126:3588" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="2152:3575" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="2186:3560" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="2220:3543" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="2258:3524" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="2292:3503" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="2348:2609" placeholder="..." />
-            <marker date="1494336917999" expanded="false" signature="2389:2410" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="2411:2584" placeholder="..." />
-            <marker date="1494336917999" expanded="false" signature="2520:2540" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="2665:2901" placeholder="..." />
-            <marker date="1494336917999" expanded="false" signature="2706:2727" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="2728:2876" placeholder="..." />
-            <marker date="1494336917999" expanded="false" signature="2839:2859" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="2957:3190" placeholder="..." />
-            <marker date="1494336917999" expanded="false" signature="2998:3019" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="3020:3165" placeholder="..." />
-            <marker date="1494336917999" expanded="false" signature="3129:3149" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="3246:3480" placeholder="..." />
-            <marker date="1494336917999" expanded="false" signature="3296:3317" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="3318:3455" placeholder="..." />
-            <marker date="1494336917999" expanded="false" signature="3421:3441" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="3717:5204" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="3743:5191" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="3777:5176" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="3811:5159" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="3849:5140" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="3883:5119" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="3939:4220" placeholder="..." />
-            <marker date="1494336917999" expanded="false" signature="4005:4026" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="4027:4195" placeholder="..." />
-            <marker date="1494336917999" expanded="false" signature="4136:4156" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="4276:4517" placeholder="..." />
-            <marker date="1494336917999" expanded="false" signature="4317:4338" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="4339:4492" placeholder="..." />
-            <marker date="1494336917999" expanded="false" signature="4448:4468" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="4573:4806" placeholder="..." />
-            <marker date="1494336917999" expanded="false" signature="4614:4635" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="4636:4781" placeholder="..." />
-            <marker date="1494336917999" expanded="false" signature="4745:4765" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="4862:5096" placeholder="..." />
-            <marker date="1494336917999" expanded="false" signature="4912:4933" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="4934:5071" placeholder="..." />
-            <marker date="1494336917999" expanded="true" signature="5037:5057" placeholder="..." />
+            <marker date="1494463521912" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cadastro/searchCurso.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="504">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cadastro/searchDisciplina.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="756">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="36" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cadastro/cadastrar_disciplina.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.0" vertical-offset="0" max-vertical-offset="720">
+          <caret line="18" column="5" selection-start-line="5" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cadastro/searchAssunto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.481482" vertical-offset="275" max-vertical-offset="1008">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cadastro/cadastro_jogo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4090909" vertical-offset="2592" max-vertical-offset="7020">
-          <caret line="160" column="41" selection-start-line="160" selection-start-column="41" selection-end-line="160" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.07366985" vertical-offset="324" max-vertical-offset="9882">
+          <caret line="21" column="22" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="22" />
           <folding>
-            <marker date="1494342823258" expanded="true" signature="553:699" placeholder="..." />
-            <marker date="1494342823258" expanded="true" signature="586:645" placeholder="{...}" />
-            <marker date="1494342823258" expanded="true" signature="787:943" placeholder="..." />
-            <marker date="1494342823258" expanded="true" signature="818:891" placeholder="{...}" />
-            <marker date="1494342823258" expanded="true" signature="6237:6256" placeholder="select * fro..Curso..." />
-            <marker date="1494342823258" expanded="true" signature="7585:7609" placeholder="select * fro..Disciplina..." />
-            <marker date="1494342823258" expanded="true" signature="8898:8919" placeholder="select * fro..Assunto..." />
+            <marker date="1494465878892" expanded="true" signature="26982:26988" placeholder="..." />
           </folding>
         </state>
       </provider>
