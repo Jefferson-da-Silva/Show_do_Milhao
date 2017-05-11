@@ -2,6 +2,7 @@
 <?php
 session_start();
 if((!isset ($_SESSION['email'])) and (!isset($_SESSION['senha']))){
+
 unset($_SESSION['email']);
 unset($_SESSION['senha']);
 unset($_SESSION['profissao']);
@@ -10,6 +11,17 @@ header("Location: login.html");
 $emailLogado = $_SESSION['email'];
 $senhaLogado = $_SESSION['senha'];
 $profissaoLogado = $_SESSION['profissao'];
+   unset($_SESSION['email']);
+    unset($_SESSION['senha']);
+    unset($_SESSION['profissao']);
+    header("Location: login.html");
+
+
+$emailLogado = $_SESSION['email'];
+$senhaLogado = $_SESSION['senha'];
+$profissaoLogado = $_SESSION['profissao'];
+
+
 ?>
 <head>
     <meta charset="utf-8">
