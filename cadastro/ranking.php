@@ -1,4 +1,8 @@
-<html><head>
+<!DOCTYPE html>
+
+
+<html lang="pt-br"><head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="../js/ajax/libs/jquery/jquery.min.js"></script>
@@ -8,6 +12,8 @@
     <link href="../css/plugins/chosen/chosen.css" rel="stylesheet">
     <link href="../css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
     <link href="../css/plugins/iCheck/custom.css" rel="stylesheet">
+    <title>Ranking</title>
+    <link rel="icon" href="../img/icon_premio2.png" />
   </head><body class="hidden-md hidden-sm hidden-xs" data-spy="scroll">
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
@@ -20,17 +26,27 @@
           </button>
         </div>
         <div class="collapse navbar-collapse" id="navbar-ex-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active">
-              <a href="#">Inicio</a>
-            </li>
-            <li>
-              <a href="#">Contato</a>
-            </li>
-          </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" arfa-expanded="false" contenteditable="true"><i class="et-down fa fa-2x fa-user text-primary"><br></i></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            <a href="../dashboard.php">Inicio</a>
+                        </li>
+                        <li>
+                            <?php echo '<a href=../atualizar/alterar_aluno.php?email='. $_SESSION['email'].' > Editar Dados</a>'; ?>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="../logout.php" >Sair</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
           <ul class="lead nav navbar-left navbar-nav">
             <li>
-              <a href="#">Show do Milhão <img src="../img/show_logo.png" width="20"></a>
+              <a href="../dashboard.php">Show do Milhão <img src="../img/show_logo.png" width="20"></a>
             </li>
           </ul>
         </div>

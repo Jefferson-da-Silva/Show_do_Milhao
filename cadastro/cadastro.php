@@ -2,6 +2,7 @@
 
 <?php
 
+
 $var = $_GET['validacao'];
 if($var == "true"){
     echo " <script type='text/javascript'>
@@ -20,7 +21,7 @@ if($var == "true"){
 }
 ?>
 
-<html><head>
+<html lang="pt-br"><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="../js/ajax/libs/jquery/jquery.min.js"></script>
@@ -32,6 +33,8 @@ if($var == "true"){
     <link href="../css/plugins/iCheck/custom.css" rel="stylesheet">
     <script src="../sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../sweetalert/dist/sweetalert.css">
+    <title>Cadastrar</title>
+    <link rel="icon" href="../img/show_logo.png" />
   </head><body>
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
@@ -44,14 +47,9 @@ if($var == "true"){
           </button>
         </div>
         <div class="collapse navbar-collapse" id="navbar-ex-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="#">Contato</a>
-            </li>
-          </ul>
           <ul class="lead nav navbar-left navbar-nav">
             <li>
-              <a href="#">Show do Milhão <img src="../img/show_logo.png" width="20"></a>
+              <a href="../login.html">Show do Milhão <img src="../img/show_logo.png" width="20"></a>
             </li>
           </ul>
         </div>

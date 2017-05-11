@@ -1,20 +1,6 @@
 <!DOCTYPE html>
 <?php
-
-session_start();
-if((!isset ($_SESSION['email'])) and (!isset($_SESSION['senha']))){
-    unset($_SESSION['email']);
-    unset($_SESSION['senha']);
-    unset($_SESSION['profissao']);
-    header("Location: ../login.html");
-}else{
-    if(($_SESSION['profissao']  == "aluno")){
-        header("Location: ../dashboard.php");
-    }
-}
-$emailLogado = $_SESSION['email'];
-$senhaLogado = $_SESSION['senha'];
-$profissaoLogado = $_SESSION['profissao'];
+    require "../hasSession.php";
 echo "<script>window.localStorage.setItem('email', '$emailLogado');</script>";
 
 ?>
@@ -47,7 +33,7 @@ if($var == "true"){
 ?>
 
 
-<html><head>
+<html lang="pt-br"><head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" src="../js/ajax/libs/jquery/jquery.min.js"></script>
@@ -70,7 +56,8 @@ if($var == "true"){
 
         <script src="../sweetalert/dist/sweetalert.min.js"></script>
         <link rel="stylesheet" type="text/css" href="../sweetalert/dist/sweetalert.css">
-
+        <title>Criar Jogo</title>
+        <link rel="icon" href="../img/show_logo.png" />
     <script>
         function areaCliked(myRadio){
             var selectCurso = document.getElementById("selecionar_curso");
@@ -272,17 +259,27 @@ if($var == "true"){
                     </button>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-ex-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="active">
-                            <a href="#">Inicio</a>
-                        </li>
-                        <li>
-                            <a href="#">Contato</a>
-                        </li>
-                    </ul>
                     <ul class="lead nav navbar-left navbar-nav">
                         <li>
-                            <a href="#">Show do Milhão <img src="../img/show_logo.png" width="20"></a>
+                            <a href="../dashboard.php">Show do Milhão <img src="../img/show_logo.png" width="20"></a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" arfa-expanded="false" contenteditable="true"><i class="et-down fa fa-2x fa-user text-primary"><br></i></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="../dashboard.php">Inicio</a>
+                                </li>
+                                <li>
+                                    <?php echo '<a href=../atualizar/alterar_aluno.php?email='. $_SESSION['email'].' > Editar Dados</a>'; ?>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="../logout.php" >Sair</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
