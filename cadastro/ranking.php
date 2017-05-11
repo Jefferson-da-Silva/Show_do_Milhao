@@ -85,49 +85,36 @@
                 while ($res = mysqli_fetch_array($resultado_partida)) {
                     $value = $res['Pontuacao'];
 
-                    $idjogador = $res['Jogador_id_Jogador'];
-                    $sql_jogador = "select Nome, instituicao from Jogador where idjogador = '$idjogador' ";
+                    $idjogador = $res['Jogador_idJogador'];
+                    $sql_jogador = "select Nome, Instituicao from Jogador where idJogador = '$idjogador' ";
                     $resultado = mysqli_query($con, $sql_jogador);
                     $resultado = mysqli_fetch_array($resultado);
                     $Nome = $resultado['Nome'];
-                    $instituicao = $resultado['instituicao'];
+                    $instituicao = $resultado['Instituicao'];
 
+                    $idCurso = $res['Jogo_Curso_idCurso'];
+                    $sql_Curso = "select Descricao_Curso from Curso where idCurso = '$idCurso' ";
+                    $resultado = mysqli_query($con, $sql_Curso);
+                    $resultado = mysqli_fetch_array($resultado);
+                    $Descricao_Curso= $resultado['Descricao_Curso'];
+
+                    $sql_Curso = "select Descricao_Disciplina from Disciplina where Curso_idCurso = '$idCurso' ";
+                    $resultado = mysqli_query($con, $sql_Curso);
+                    $resultado = mysqli_fetch_array($resultado);
+                    $Descricao_Disciplina= $resultado['Descricao_Disciplina'];
                     echo "
                     <tr>
                       <td>$index</td>
-                      <td></td>
-                      <td></td>
                       <td>$Nome</td>
+                      <td>$Descricao_Curso</td>
+                      <td>$Descricao_Disciplina</td>
                       <td>$instituicao</td>
                       <td>$value</td>
                     </tr>";
                     $index++;
                 }
                 ?>
-                <tr>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
+         
               </tbody>
             </table>
           </div>
