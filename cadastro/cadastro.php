@@ -3,7 +3,7 @@
 <?php
 
 
-$var = $_GET['validacao'];
+
 if($var == "true"){
     echo " <script type='text/javascript'>
         function startSuccess(){

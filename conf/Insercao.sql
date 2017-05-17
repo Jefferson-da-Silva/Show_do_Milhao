@@ -21,3 +21,4 @@ INSERT INTO Perguntas (idPerguntas,Enunciado,RespostaCorreta,Alternativa_1,Alter
 Alternativa_4,Alternativa_5,Jogo_idJogo) 
 values(6,'Qual a estrutura de uma funcao','public function teste()','fucao nome_funcao()',
 'java metodo teste()','php function teste()','teste() function','python function teste()',4);	
+
