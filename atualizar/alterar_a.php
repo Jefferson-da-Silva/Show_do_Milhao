@@ -58,76 +58,75 @@
                         <?php
                         require_once "../conecta.php" ;
                         session_start();
-                       $emailLogado = $_SESSION['email'];
 
-                        $sql_nome = "SELECT Nome FROM Jogador WHERE Email = '$emailLogado'";
-                        $res_nome  =  mysqli_query($con, $sql_nome);
-                        $res = mysqli_fetch_array($res_nome);
+                        $mostrar = false;
+                       $emailLogado = $_SESSION['email'];
+                          if ($_SESSION['profissao'] == "aluno") {
+                              $sql_nome = "SELECT Nome FROM Jogador WHERE Email = '$emailLogado'";
+
+                              $mostrar = false;
+                          }else if($_SESSION['profissao'] == "professor") {
+                              $sql_nome = "SELECT Nome FROM Professor WHERE Email = '$emailLogado'";
+
+                              $mostrar = true;
+                          }
+                                $res_nome  =  mysqli_query($con, $sql_nome);
+                                $res = mysqli_fetch_array($res_nome);
 
 
                         $nome = $res['Nome'];
 
-                       echo" <input class='form-control' id='exampleInputNome' name='cadastro_input_nome'  value= ' $nome' type='text'>";
-                    ?>
+                       echo" <input class='form-control' id='exampleInputNome' name='cadastro_input_nome'  value= ' $nome' type='text'>
+
                     </div>
-                    <div class="form-group">
-                        <label class="control-label" for="exampleInputCPF">CPF</label>
-
-                    <?php
-                        require_once "../conecta.php" ;
-
-                        $emailLogado = $_SESSION['email'];
-
-                        $sql_cpf = "SELECT CPF FROM Jogador WHERE Email = '$emailLogado'";
-                        $res_cpf  =  mysqli_query($con, $sql_cpf);
-                        $res = mysqli_fetch_array($res_cpf);
+                    <div class='form-group'>
+                        <label class='control-label' for='exampleInputCPF'>CPF</label>
 
 
-                         $cpf = $res['CPF'];
-                      echo"  <input type='text' class='form-control' id='exampleInputCPF' required='' name='cadastro_input_cpf' data-mask='999.999.999-99' value='$cpf'>"
-                    ?>
+                       <input type='text' class='form-control' id='exampleInputCPF' required='' name='cadastro_input_cpf' data-mask='999.999.999-99' value='$cpf'>
+
                     </div>
-                    <div class="form-group" id="divAluno">
-                        <label class="control-label" for="exampleInputInstituicao">Instituição</label>
-                        <?php
+                    <div class='form-group' id='divAluno'>
+                        <label class='control-label' for='exampleInputInstituicao'>Instituição</label>
 
-                        require_once "../conecta.php" ;
+                                  <input class='form-control' id='exampleInputInstituicao' required='' name='cadastro_input_instituicao' value='$instituicao' type='text'>";
 
-                        $emailLogado = $_SESSION['email'];
-
-                        $sql_instituicao = "SELECT Instituicao FROM Jogador WHERE Email = '$emailLogado'";
-                        $res_instituicao  =  mysqli_query($con, $sql_instituicao);
-                        $res = mysqli_fetch_array($res_instituicao);
+                         if($mostrar) {
+                             echo" <div class='form-group' id='divProfessor' style='display: none'>
 
 
-                        $instituicao= $res['Instituicao'];
-                       echo" <input class='form-control' id='exampleInputInstituicao' name='cadastro_input_instituicao' value='$instituicao' type='text'>"
-                        ?>
+
+                                 <label class='control-label' for='exampleInputLattes' > Currículo Lattes </label >
+
+
+                        <input class='form-control' id = 'exampleInputLattes' name = 'cadastro_input_curriculo' value = '$Currciculo'  type = 'url' >
+
+                        </div >
+                        <div class='form-group' id = 'divTitulo' style = 'display: none' >
+                                <label class='control-label' for='exampleInputTitulo' > Titulo</label >
+
+
+                           <input class='form-control' id = 'exampleInputTitulo' value = '$titulo' name = 'cadastro_input_titulo' type = 'text' >
+
+                        </div >
+                        </div >";
+                                 }
+                 echo " <div class='form-group'>
+                        <label class='control-label' for='exampleInputEmail1'>E-mail</label>
+
+                                <input class='form-control' id='exampleInputEmail1' name='cadastro_input_email' value='$email' type='email' required=''>
+
                     </div>
-                    <div class="form-group">
-                        <label class="control-label" for="exampleInputEmail1">E-mail</label>
-                        <?php
-                        require_once "../conecta.php" ;
-
-                        $emailLogado = $_SESSION['email'];
-
-                        $sql_email = "SELECT Email FROM Jogador WHERE Email = '$emailLogado'";
-                        $res_email  =  mysqli_query($con, $sql_email);
-                        $res = mysqli_fetch_array($res_email);
+                    <div class='form-group'>
+                        <label class='control-label' for='exampleInputPassword1'>Senha</label>
 
 
-                        $email= $res['Email'];
-
-                      echo " <input class='form-control' id='exampleInputEmail1' name='cadastro_input_email' value='' type='email' required=''>"
-                        ?>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label" for="exampleInputPassword1">Senha</label>
-                        <input class="form-control" id="exampleInputPassword1" minlength="6" maxlength="30" name="cadastro_input_senha" placeholder="Digite a sua senha" type="password">
+                        <input class='form-control' id='exampleInputPassword1' minlength='6' maxlength='30' name='cadastro_input_senha' value='$senha' required=''  type='password'>";
+                               ?>
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="exampleInputPassword2">Confirmar Senha</label>
-                        <input class="form-control" id="exampleInputPassword2" minlength="6" maxlength="30" name="cadastro_input_confirma_senha" placeholder="Confirme a senha" type="password">
+                        <input class="form-control" id="exampleInputPassword2" minlength="6" maxlength="30" name="cadastro_input_confirma_senha" required='' placeholder="Confirme a senha" type="password">
                     </div>
                     <button type="submit" name="botao_alterar" class="btn btn-success">Alterar Dados
                         <i class="fa fa-fw fa-floppy-o"></i>

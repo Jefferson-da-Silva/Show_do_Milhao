@@ -7,7 +7,7 @@ echo "<script>window.localStorage.setItem('email', '$emailLogado');</script>";
 
 <?php
 
-$var = $_GET['dadossalvos'];
+$var = isset( $_GET['dadossalvos']);
 if($var == "true"){
     echo " <script type='text/javascript'>
         function startSuccess(){
