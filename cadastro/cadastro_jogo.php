@@ -7,7 +7,7 @@ echo "<script>window.localStorage.setItem('email', '$emailLogado');</script>";
 
 <?php
 
-$var = $_GET['dadossalvos'];
+$var = isset( $_GET['dadossalvos']);
 if($var == "true"){
     echo " <script type='text/javascript'>
         function startSuccess(){
@@ -267,13 +267,13 @@ if($var == "true"){
                     <ul class="nav navbar-nav navbar-right">
                         <li></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" arfa-expanded="true" contenteditable="true"><i class="et-down fa fa-2x fa-user text-primary"><br></i></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" arfa-expanded="false" contenteditable="false"><i class="et-down fa fa-2x fa-user text-primary"><br></i></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li>
                                     <a href="../dashboard.php">Inicio</a>
                                 </li>
                                 <li>
-                                    <a href=atualizar/alterar_a.php> Editar Dados</a>
+                                    <?php echo '<a href=../atualizar/gerenciar_usuario.php?email='. $_SESSION['email'].' > Editar Dados</a>'; ?>
                                 </li>
                                 <li class="divider"></li>
                                 <li>
