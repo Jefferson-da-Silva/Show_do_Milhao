@@ -2,28 +2,24 @@
 
         require_once "../conecta.php" ;
         session_start();
-        if((!isset ($_SESSION['email'])==true) and(!isset($_SESSION['senha'])==true)){
-        unset($_SESSION['email']);
-        unset($_SESSION['senha']);
-        header("Location: login.html");
-        }
+        $profissao = $_SESSION['profissao'];
         $emailLogado = $_SESSION['email'];
-        $senhaLogado = $_SESSION['senha'];
-        $profissaoLogado = $_SESSION['profissao'];
 
 
+        if(isset($_POST['botao_alterar'])) {
 
-        $nome = $_POST['cadastro_input_nome'];
-        $cpf = $_POST['cadastro_input_cpf'];
-        $instituicao = $_POST['cadastro_input_instituicao'];
-        $email = $_POST['cadastro_input_email'];
-        $senha = $_POST['cadastro_input_senha'];
-        $confirma_senha = $_POST['cadastro_input_confirma_senha'];
-        $equipe="";
+            if ($profissao == "aluno") {
+
+                $nome = $_POST['cadastro_input_nome'];
+                $cpf = $_POST['cadastro_input_cpf'];
+                $instituicao = $_POST['cadastro_input_instituicao'];
+                $email = $_POST['cadastro_input_email'];
+                $senha = $_POST['cadastro_input_senha'];
+                $confirma_senha = $_POST['cadastro_input_confirma_senha'];
+                $equipe = "";
 
 
-
-            $sql = "update jogador set
+                $sql = "update Jogador set
               nome = '$nome',
               instituicao = '$instituicao',
               equipe = '$equipe',
@@ -31,19 +27,73 @@
               email = '$email',
               senha = '$senha'
               WHERE email = '$emailLogado' ";
+            }
+            if ($profissao == "professor") {
 
-        if(mysqli_query($con, $sql)){
+                $nome = $_POST['cadastro_input_nome'];
+                $cpf = $_POST['cadastro_input_cpf'];
+                $curriculo = $_POST['cadastro_input_curriculo'];
+                $titulo = $_POST['cadastro_input_titulo'];
+                $instituicao = $_POST['cadastro_input_instituicao'];
+                $email = $_POST['cadastro_input_email'];
+                $senha = $_POST['cadastro_input_senha'];
+                $confirma_senha = $_POST['cadastro_input_confirma_senha'];
 
-            echo "Atualizado com sucesso";
 
-        }else{
+                $sql = "update Professor set
+              nome = '$nome',
+              cpf = '$cpf',
+              email= '$email',
+              curriculo = '$curriculo',
+              instituicao = '$instituicao',
+              titulacao = '$titulo',
+              senha= '$senha'
+              WHERE email = '$emailLogado'";
 
-            echo "Erroa ao atualizar";
+            }
+            if (mysqli_query($con, $sql)) {
+
+                echo "Atualizado com sucesso";
+
+            } else {
+
+                echo "Erroa ao atualizar";
+                echo mysqli_error($con);
+            }
 
         }
 
+                if(isset($_POST['botao_excluir'])){
 
+                    if ($profissao == "aluno") {
 
+                        $sql_del = "DELETE FROM Jogador WHERE Email ='$emailLogado'";
 
+                        if (mysqli_query($con, $sql_del)) {
+
+                            echo "Excluido";
+
+                        } else {
+
+                            echo "erro ao excluir";
+
+                        }
+                    }
+
+                    if ($profissao == "professor") {
+
+                        $sql_del = "DELETE FROM Professor WHERE Email ='$emailLogado'";
+
+                        if (mysqli_query($con, $sql_del)) {
+
+                            echo "Excluido";
+
+                        } else {
+
+                            echo "erro ao excluir";
+
+                        }
+                    }
+        }
 
 ?>

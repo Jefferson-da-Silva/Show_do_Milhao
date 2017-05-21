@@ -53,30 +53,40 @@
             <div class="col-md-12">
                 <form role="form" method="POST" action="alterar_aluno.php">
 
-                    <div class="form-group">
-                        <label class="control-label" for="exampleInputNome">Nome</label>
-                        <?php
-                        require_once "../conecta.php" ;
-                        session_start();
 
-                        $mostrar = false;
-                       $emailLogado = $_SESSION['email'];
-                          if ($_SESSION['profissao'] == "aluno") {
-                              $sql_nome = "SELECT Nome FROM Jogador WHERE Email = '$emailLogado'";
+                    <?php
+                    require_once "../conecta.php" ;
+                    session_start();
+                    $profissao = $_SESSION['profissao'];
 
-                              $mostrar = false;
-                          }else if($_SESSION['profissao'] == "professor") {
-                              $sql_nome = "SELECT Nome FROM Professor WHERE Email = '$emailLogado'";
+                    $mostrar;
+                    $emailLogado = $_SESSION['email'];
+                    if ($profissao == "aluno") {
+                        $sql_nome = "SELECT * FROM Jogador WHERE Email = '$emailLogado'";
 
-                              $mostrar = true;
-                          }
-                                $res_nome  =  mysqli_query($con, $sql_nome);
-                                $res = mysqli_fetch_array($res_nome);
+                        $mostrar = "false";
+                    }if($profissao == "professor") {
+                        $sql_nome = "SELECT * FROM Professor WHERE Email = '$emailLogado'";
+
+                        $mostrar = "true";
+                    }
+                    $res_nome  =  mysqli_query($con, $sql_nome);
+                    $res = mysqli_fetch_array($res_nome);
 
 
-                        $nome = $res['Nome'];
+                    $nome = $res['Nome'];
+                    $cpf = $res['CPF'];
+                    if($mostrar == "true") {
+                        $curriculo = $res['Curriculo'];
+                        $titulo = $res['Titulacao'];
+                    }
+                    $email = $res{'Email'};
+                    $instituicao = $res ['Instituicao'];
+                    $senha = $res['Senha'];
 
-                       echo" <input class='form-control' id='exampleInputNome' name='cadastro_input_nome'  value= ' $nome' type='text'>
+                    echo"<div class='form-group'>
+                        <label class='control-label' for='exampleInputNome'>Nome</label>
+                             <input class='form-control' id='exampleInputNome' name='cadastro_input_nome'  value= ' $nome' type='text'>
 
                     </div>
                     <div class='form-group'>
@@ -89,28 +99,28 @@
                     <div class='form-group' id='divAluno'>
                         <label class='control-label' for='exampleInputInstituicao'>Instituição</label>
 
-                                  <input class='form-control' id='exampleInputInstituicao' required='' name='cadastro_input_instituicao' value='$instituicao' type='text'>";
-
-                         if($mostrar) {
-                             echo" <div class='form-group' id='divProfessor' style='display: none'>
+                                  <input class='form-control' id='exampleInputInstituicao' required='' name='cadastro_input_instituicao' value='$instituicao' type='text'>
+                    </div>";
+                         if($profissao == "professor") {
+                             echo" <div class='form-group' id='divProfessor' >
 
 
 
                                  <label class='control-label' for='exampleInputLattes' > Currículo Lattes </label >
 
 
-                        <input class='form-control' id = 'exampleInputLattes' name = 'cadastro_input_curriculo' value = '$Currciculo'  type = 'url' >
+                        <input class='form-control' id = 'exampleInputLattes' name = 'cadastro_input_curriculo' value = '$curriculo'  type = 'url' >
 
                         </div >
-                        <div class='form-group' id = 'divTitulo' style = 'display: none' >
+                        <div class='form-group' id = 'divTitulo'>
                                 <label class='control-label' for='exampleInputTitulo' > Titulo</label >
 
 
                            <input class='form-control' id = 'exampleInputTitulo' value = '$titulo' name = 'cadastro_input_titulo' type = 'text' >
 
-                        </div >
+
                         </div >";
-                                 }
+                         }
                  echo " <div class='form-group'>
                         <label class='control-label' for='exampleInputEmail1'>E-mail</label>
 
@@ -121,22 +131,26 @@
                         <label class='control-label' for='exampleInputPassword1'>Senha</label>
 
 
-                        <input class='form-control' id='exampleInputPassword1' minlength='6' maxlength='30' name='cadastro_input_senha' value='$senha' required=''  type='password'>";
+                        <input class='form-control' id='exampleInputPassword1' minlength='6' maxlength='30' name='cadastro_input_senha' value='$senha' required=''  type='password'>
+                    </div>";
                                ?>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label" for="exampleInputPassword2">Confirmar Senha</label>
-                        <input class="form-control" id="exampleInputPassword2" minlength="6" maxlength="30" name="cadastro_input_confirma_senha" required='' placeholder="Confirme a senha" type="password">
-                    </div>
-                    <button type="submit" name="botao_alterar" class="btn btn-success">Alterar Dados
+
+            <div class="form-group">
+                <label class="control-label" for="exampleInputPassword2">Confirmar Senha</label>
+                <input class="form-control" id="exampleInputPassword2" minlength="6" maxlength="30" name="cadastro_input_confirma_senha" required='' placeholder="Confirme a senha" type="password">
+            </div>
+            <button type="submit" name="botao_alterar" class="btn btn-success">Alterar Dados
+                <i class="fa fa-fw fa-floppy-o"></i>
+            </button>
+                    <button type="submit" name="botao_excluir" class="btn btn-success">Excluir Dados
                         <i class="fa fa-fw fa-floppy-o"></i>
                     </button>
+            </form>
 
-                </form>
 
             </div>
-        </div>
     </div>
+</div>
 </div>
 <div class="section">
     <div class="container">
