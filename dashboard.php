@@ -90,7 +90,7 @@ $profissaoLogado = $_SESSION['profissao'];
                     <h1 style='font-family: Lobster'>Ranking</h1></a>
                   </div>
                   <div class='col-md-3' align='center'>
-                    <a href='#' style='text-decoration: none'><img src='img/icon_rules.png' class='img-circle img-responsive' width='200'>
+                    <a href='ajuda.html' style='text-decoration: none'><img src='img/icon_rules.png' class='img-circle img-responsive' width='200'>
                     <h1 style='font-family: Lobster'>Regras</h1></a>
                   </div>
                   <div class='col-md-3' align='center'>
@@ -122,7 +122,7 @@ $profissaoLogado = $_SESSION['profissao'];
                     <h1 style='font-family: Lobster'>Liberar Aluno </h1></a>
                   </div>
                   <div class='col-md-3' align='center'>
-                    <a href='#' style='text-decoration: none'><img src='img/icon_rules.png' class='img-circle img-responsive' width='200'>
+                    <a href='ajuda.html' style='text-decoration: none'><img src='img/icon_rules.png' class='img-circle img-responsive' width='200'>
                     <h1 style='font-family: Lobster'>Regras</h1></a>
                   </div>
                   <div class='col-md-3' align='center'>

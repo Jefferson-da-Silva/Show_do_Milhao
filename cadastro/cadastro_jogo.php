@@ -267,17 +267,17 @@ if($var == "true"){
                     <ul class="nav navbar-nav navbar-right">
                         <li></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" arfa-expanded="false" contenteditable="true"><i class="et-down fa fa-2x fa-user text-primary"><br></i></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" arfa-expanded="true" contenteditable="true"><i class="et-down fa fa-2x fa-user text-primary"><br></i></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li>
                                     <a href="../dashboard.php">Inicio</a>
                                 </li>
                                 <li>
-                                    <?php echo '<a href=../atualizar/alterar_aluno.php?email='. $_SESSION['email'].' > Editar Dados</a>'; ?>
+                                    <a href=atualizar/alterar_a.php> Editar Dados</a>
                                 </li>
                                 <li class="divider"></li>
                                 <li>
-                                    <a href="../logout.php" >Sair</a>
+                                    <a href="logout.php" >Sair</a>
                                 </li>
                             </ul>
                         </li>
