@@ -127,18 +127,6 @@ function SmartWizard(target, options) {
 
             //CAPTURA OS DADOS DAS PERGUNTAS
 
-
-            console.log("nomeCurso: "         + nomeCurso+
-                        "\nnomeJogo: "        + nomeJogo +
-                        "\nvisibilidade: "    + visibilidade+
-                        "\ncorretas_array: "  + corretas+
-                        "\nperguntas_array: " + perguntas+
-                        "\nalternativas1"     + alternativas1+
-                        "\nalternativas2: "   + alternativas2+
-                        "\nalternativas3: "   + alternativas3+
-                        "\nalternativas4: "   + alternativas4+
-                        "\nalternativas5: "   + alternativas5);
-
            $.post("../cadastro/cadastrar_perguntas.php", {
                'nomeCurso':nomeCurso,
                'nomeJogo': nomeJogo,
