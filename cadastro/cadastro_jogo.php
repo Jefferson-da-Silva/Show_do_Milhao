@@ -25,12 +25,20 @@ if(isset($_GET['dadossalvos'])) {
         window.onload=startError;
         </script>";
     }
-    if ($var == "nomeJogo_false") {
+    if ($var == "erroInserirPergunta") {
         echo " <script type='text/javascript'>
-        function errorname(){
-            swal('Erro ao tentar salvar jogo!', 'Nome já existente!', 'error');
+        function errorPergunta(){
+            swal('Erro ao tentar salvar jogo!', 'Erro ao inserir perguntas!', 'error');
         };
-        window.onload=errorname;
+        window.onload=errorPergunta;
+        </script>";
+    }
+    if ($var == "erroInserirPergunta") {
+        echo " <script type='text/javascript'>
+        function errorJogo(){
+            swal('Erro ao tentar salvar jogo!', 'Erro ao inserir Jogo!', 'error');
+        };
+        window.onload=errorJogo;
         </script>";
     }
 }
@@ -41,11 +49,13 @@ if(isset($_GET['dadossalvos'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="../js/ajax/libs/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+
+
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.css" rel="stylesheet">
     <link href="../css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="../css/page_pingendo.css" rel="stylesheet" type="text/css">
+
 
     <link href="../css/plugins/chosen/chosen.css" rel="stylesheet">
     <link href="../css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
@@ -56,6 +66,7 @@ if(isset($_GET['dadossalvos'])) {
     <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
     <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 

@@ -22,7 +22,7 @@ $sql_nomeJogo = "SELECT * FROM Jogo WHERE Descricao_Jogo = '$nomeJogo'";
 $resultado_jogo = mysqli_query($con, $sql_nomeJogo);
 $existe_nomeJogo = mysqli_num_rows($resultado_jogo);
 if ($existe_nomeJogo) {
-    echo "nao inseriu";
+    echo "nome existe";
 }else{
 
     $sql_professor = "SELECT idProfessor FROM Professor WHERE Email = '$emailProfessor'";
@@ -74,21 +74,16 @@ if ($existe_nomeJogo) {
     } else {
         $saida = 1;
     }
-
-
-
 }
 
-
-
-
-
-if($saida == 0){
-    echo "inseriu";
-}else if($saida == -1){
+if($saida == -1){
     echo "false";
+}else if($saida == 0){
+    echo "inseriu";
+}else if($saida == 1){
+    echo "erro inserir pergunta";
+}else if($saida == 2){
+    echo "erro inserir jogo";
 }
-
-
 
 ?>

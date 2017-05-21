@@ -1,4 +1,20 @@
-<html><head>
+<html>
+<?php
+
+session_start();
+if((!isset ($_SESSION['email'])) and (!isset($_SESSION['senha']))){
+    unset($_SESSION['email']);
+    unset($_SESSION['senha']);
+    unset($_SESSION['profissao']);
+    header("Location: login.html");
+}
+
+$emailLogado = $_SESSION['email'];
+$senhaLogado = $_SESSION['senha'];
+$profissaoLogado = $_SESSION['profissao'];
+
+?>
+<head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -15,12 +31,19 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><span>Brand</span></a>
+                    <a class="navbar-brand" href="#"><span> Show do Milhão <img src="img/show_logo.png" width="20"></span></a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-ex-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        
-                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="et-down fa fa-2x fa-user-secret"><br></i></a> <ul class="dropdown-menu" role="menu"> <li><a href="#">Action</a></li><li><a href="#">Another action</a></li><li><a href="#">Something else here</a></li><li class="divider"></li><li><a href="#">Separated link</a></li><li class="divider"></li><li><a href="#">One more separated link</a></li></ul> </li></ul>
+
+                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="et-down fa fa-2x fa-user-secret"><br></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="ajuda.html">Regras</a></li>
+                            <li class="divider"></li>
+                            <li><a href="logout.php">Sair</a></li>
+                        </ul>
+                    </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -57,13 +80,21 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>Jose</td>
-                                                    <td>jose@jose.com</td>
-                                                    <td>
-                                                        <a class="btn btn-danger btn-xs">Excluir</a>
-                                                    </td>
-                                                </tr>
+                                            <?php
+                                            require_once "conecta.php" ;
+
+                                            $sql = "SELECT * FROM Professor";
+                                            $resultado = mysqli_query($con, $sql);
+                                            while ($res = mysqli_fetch_array($resultado)) {
+                                                $nomeProfessor  = $res['Nome'];
+                                                $emailProfessor = $res['Email'];
+                                                echo "<tr>
+                                                    <td>$nomeProfessor</td>
+                                                    <td>$emailProfessor</td>
+                                                    <td><a href='excluir/excluirProfessor?email=$emailProfessor' class='btn btn-danger btn-xs'>Excluir</a></td>
+                                                </tr>";
+                                            }
+                                            ?>
                                             </tbody>
                                         </table>
                                     </div>
@@ -78,13 +109,21 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>Jose</td>
-                                                    <td>jose@jose.com</td>
-                                                    <td>
-                                                        <a class="btn btn-danger btn-xs">Excluir</a>
-                                                    </td>
-                                                </tr>
+                                            <?php
+                                            require_once "conecta.php" ;
+
+                                            $sql = "select * from Jogador";
+                                            $resultado = mysqli_query($con, $sql);
+                                            while ($res = mysqli_fetch_array($resultado)) {
+                                                $nome  = $res['Nome'];
+                                                $email = $res['Email'];
+                                                echo "<tr>
+                                                    <td>$nome</td>
+                                                    <td>$email</td>
+                                                    <td><a href='excluir/excluirAluno?email=$email' class='btn btn-danger btn-xs'>Excluir</a></td>
+                                                </tr>";
+                                            }
+                                            ?>
                                             </tbody>
                                         </table>
                                     </div>
@@ -112,22 +151,46 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                    <td>
-                                        <a class="btn btn-danger btn-xs">Excluir</a>
-                                    </td>
-                                </tr>
+                            <?php
+                            require_once "conecta.php" ;
+
+                            $sql_partida = "select * from Jogo";
+                            $resultado_partida = mysqli_query($con, $sql_partida);
+                            $index = 1;
+                            while ($res = mysqli_fetch_array($resultado_partida)) {
+                                $nome = $res['Descricao_Jogo'];
+                                $id_Jogo= $res['Curso_idCurso'];
+                                $idProfessor= $res['Professor_idProfessor'];
+                                $sql_curso = "select * from Curso where idCurso='$id_Jogo'";
+                                $resultado_curso = mysqli_query($con, $sql_curso);
+                                $res_curso= mysqli_fetch_array($resultado_curso);
+                                $Descricao_Curso = $res_curso['Descricao_Curso'];
+
+                                $sql_instituicao = "select * from Professor where idProfessor='$idProfessor'";
+                                $resultado_professor = mysqli_query($con, $sql_instituicao);
+                                $res_instituicao= mysqli_fetch_array($resultado_professor);
+                                $Instituicao = $res_instituicao['Instituicao'];
+                                $nome_Professor= $res_instituicao['Nome'];
+                                echo "
+                    <tr>
+                      <td>$index</td>
+                      <td>$nome</td>
+                      <td>$Descricao_Curso</td>
+                      <td>$Instituicao</td>
+                      <td>$nome_Professor</td>
+                      <td><a href='excluir/excluirJogo?nome=$nome' class='btn btn-danger btn-xs'>Excluir</a></td>
+
+                    </tr>";
+                                $index++;
+                            }
+                            ?>
+
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
-    
+
 
 </body></html>

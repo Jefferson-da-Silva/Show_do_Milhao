@@ -141,12 +141,13 @@ function SmartWizard(target, options) {
                 'alternativas5_array': alternativas5
             }, function(result){
                 if(result == "inseriu"){
-
                     window.location.assign("../cadastro/cadastro_jogo.php?dadossalvos=true");
-                }
-                else{
+                }else if(result == "false"){
                     window.location.assign("../cadastro/cadastro_jogo.php?dadossalvos=false");
-
+                }else if(result == "erro inserir pergunta"){
+                    window.location.assign("../cadastro/cadastro_jogo.php?dadossalvos=erroInserirPergunta");
+                }else if(result == "erro inserir jogo"){
+                    window.location.assign("../cadastro/cadastro_jogo.php?dadossalvos=erroInserirJogo");
                 }
 
 
