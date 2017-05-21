@@ -101,8 +101,8 @@
 
                                   <input class='form-control' id='exampleInputInstituicao' required='' name='cadastro_input_instituicao' value='$instituicao' type='text'>
                     </div>";
-                         if($profissao == "professor") {
-                             echo" <div class='form-group' id='divProfessor' >
+                    if($profissao == "professor") {
+                        echo" <div class='form-group' id='divProfessor' >
 
 
 
@@ -120,8 +120,8 @@
 
 
                         </div >";
-                         }
-                 echo " <div class='form-group'>
+                    }
+                    echo " <div class='form-group'>
                         <label class='control-label' for='exampleInputEmail1'>E-mail</label>
 
                                 <input class='form-control' id='exampleInputEmail1' name='cadastro_input_email' value='$email' type='email' required=''>
@@ -133,24 +133,25 @@
 
                         <input class='form-control' id='exampleInputPassword1' minlength='6' maxlength='30' name='cadastro_input_senha' value='$senha' required=''  type='password'>
                     </div>";
-                               ?>
+                    ?>
 
-            <div class="form-group">
-                <label class="control-label" for="exampleInputPassword2">Confirmar Senha</label>
-                <input class="form-control" id="exampleInputPassword2" minlength="6" maxlength="30" name="cadastro_input_confirma_senha" required='' placeholder="Confirme a senha" type="password">
-            </div>
-            <button type="submit" name="botao_alterar" class="btn btn-success">Alterar Dados
-                <i class="fa fa-fw fa-floppy-o"></i>
-            </button>
-                    <button type="submit" name="botao_excluir" class="btn btn-success">Excluir Dados
+                    <div class="form-group">
+                        <label class="control-label" for="exampleInputPassword2">Confirmar Senha</label>
+                        <input class="form-control" id="exampleInputPassword2" minlength="6" maxlength="30" name="cadastro_input_confirma_senha" required='' placeholder="Confirme a senha" type="password">
+                    </div>
+                    <button type="submit" name="botao_excluir" class="btn btn-danger">Excluir Dados
+                        <i class="fa fa-fw fa-trash-o"></i>
+                    </button>
+                    <button type="submit" name="botao_alterar" class="btn btn-success">Alterar Dados
                         <i class="fa fa-fw fa-floppy-o"></i>
                     </button>
-            </form>
+
+                </form>
 
 
             </div>
+        </div>
     </div>
-</div>
 </div>
 <div class="section">
     <div class="container">

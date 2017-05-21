@@ -53,8 +53,8 @@ function SmartWizard(target, options) {
         elmActionBar.append($this.loader);
         $this.target.append($this.elmStepContainer);
         elmActionBar.append($this.buttons.finish)
-                    .append($this.buttons.next)
-                    .append($this.buttons.previous);
+            .append($this.buttons.next)
+            .append($this.buttons.previous);
         $this.target.append(elmActionBar);
         this.contentWidth = $this.elmStepContainer.width();
 
@@ -127,27 +127,27 @@ function SmartWizard(target, options) {
 
             //CAPTURA OS DADOS DAS PERGUNTAS
 
-           $.post("../cadastro/cadastrar_perguntas.php", {
-               'nomeCurso':nomeCurso,
-               'nomeJogo': nomeJogo,
-               'emailProfessor': emailProfessor,
-               'visibilidade': visibilidade,
-               'corretas_array': corretas,
-               'perguntas_array': perguntas,
-               'alternativas1_array': alternativas1,
-               'alternativas2_array': alternativas2,
-               'alternativas3_array': alternativas3,
-               'alternativas4_array': alternativas4,
-               'alternativas5_array': alternativas5
-           }, function(result){
-               if(result == "inseriu"){
+            $.post("../cadastro/cadastrar_perguntas.php", {
+                'nomeCurso':nomeCurso,
+                'nomeJogo': nomeJogo,
+                'emailProfessor': emailProfessor,
+                'visibilidade': visibilidade,
+                'corretas_array': corretas,
+                'perguntas_array': perguntas,
+                'alternativas1_array': alternativas1,
+                'alternativas2_array': alternativas2,
+                'alternativas3_array': alternativas3,
+                'alternativas4_array': alternativas4,
+                'alternativas5_array': alternativas5
+            }, function(result){
+                if(result == "inseriu"){
 
-                   window.location.assign("../cadastro/cadastro_jogo.php?dadossalvos=true");
-               }
-               else{
-                   window.location.assign("../cadastro/cadastro_jogo.php?dadossalvos=false");
+                    window.location.assign("../cadastro/cadastro_jogo.php?dadossalvos=true");
+                }
+                else{
+                    window.location.assign("../cadastro/cadastro_jogo.php?dadossalvos=false");
 
-               }
+                }
 
 
             });
@@ -347,7 +347,7 @@ function SmartWizard(target, options) {
         if (! $this.options.cycleSteps){
             if (0 >= $this.curStepIdx) {
                 $($this.buttons.previous).addClass("buttonDisabled");
-				if ($this.options.hideButtonsOnDisabled) {
+                if ($this.options.hideButtonsOnDisabled) {
                     $($this.buttons.previous).hide();
                 }
             }else{
@@ -483,52 +483,52 @@ function SmartWizard(target, options) {
 
 (function($){
 
-$.fn.smartWizard = function(method) {
-    var args = arguments;
-    var rv = undefined;
-    var allObjs = this.each(function() {
-        var wiz = $(this).data('smartWizard');
-        if (typeof method == 'object' || ! method || ! wiz) {
-            var options = $.extend({}, $.fn.smartWizard.defaults, method || {});
-            if (! wiz) {
-                wiz = new SmartWizard($(this), options);
-                $(this).data('smartWizard', wiz);
-            }
-        } else {
-            if (typeof SmartWizard.prototype[method] == "function") {
-                rv = SmartWizard.prototype[method].apply(wiz, Array.prototype.slice.call(args, 1));
-                return rv;
+    $.fn.smartWizard = function(method) {
+        var args = arguments;
+        var rv = undefined;
+        var allObjs = this.each(function() {
+            var wiz = $(this).data('smartWizard');
+            if (typeof method == 'object' || ! method || ! wiz) {
+                var options = $.extend({}, $.fn.smartWizard.defaults, method || {});
+                if (! wiz) {
+                    wiz = new SmartWizard($(this), options);
+                    $(this).data('smartWizard', wiz);
+                }
             } else {
-                $.error('Method ' + method + ' does not exist on jQuery.smartWizard');
+                if (typeof SmartWizard.prototype[method] == "function") {
+                    rv = SmartWizard.prototype[method].apply(wiz, Array.prototype.slice.call(args, 1));
+                    return rv;
+                } else {
+                    $.error('Method ' + method + ' does not exist on jQuery.smartWizard');
+                }
             }
+        });
+        if (rv === undefined) {
+            return allObjs;
+        } else {
+            return rv;
         }
-    });
-    if (rv === undefined) {
-        return allObjs;
-    } else {
-        return rv;
-    }
-};
+    };
 
 // Default Properties and Events
-$.fn.smartWizard.defaults = {
-    selected: 0,  // Selected Step, 0 = first step
-    keyNavigation: true, // Enable/Disable key navigation(left and right keys are used if enabled)
-    enableAllSteps: false,
-    transitionEffect: 'slide', // Effect on navigation, none/fade/slide/slideleft
-    contentURL:null, // content url, Enables Ajax content loading
-    contentCache:true, // cache step contents, if false content is fetched always from ajax url
-    cycleSteps: false, // cycle step navigation
-    enableFinishButton: true, // make finish button enabled always
-	hideButtonsOnDisabled: false, // when the previous/next/finish buttons are disabled, hide them instead?
-    errorSteps:[],    // Array Steps with errors
-    labelNext:'Próximo',
-    labelPrevious:'Anterior',
-    labelFinish:'Finalizar',
-    noForwardJumping: false,
-    onLeaveStep: null, // triggers when leaving a step
-    onShowStep: null,  // triggers when showing a step
-    onFinish: null  // triggers when Finish button is clicked
-};
+    $.fn.smartWizard.defaults = {
+        selected: 0,  // Selected Step, 0 = first step
+        keyNavigation: true, // Enable/Disable key navigation(left and right keys are used if enabled)
+        enableAllSteps: false,
+        transitionEffect: 'slide', // Effect on navigation, none/fade/slide/slideleft
+        contentURL:null, // content url, Enables Ajax content loading
+        contentCache:true, // cache step contents, if false content is fetched always from ajax url
+        cycleSteps: false, // cycle step navigation
+        enableFinishButton: true, // make finish button enabled always
+        hideButtonsOnDisabled: false, // when the previous/next/finish buttons are disabled, hide them instead?
+        errorSteps:[],    // Array Steps with errors
+        labelNext:'Próximo',
+        labelPrevious:'Anterior',
+        labelFinish:'Finalizar',
+        noForwardJumping: false,
+        onLeaveStep: null, // triggers when leaving a step
+        onShowStep: null,  // triggers when showing a step
+        onFinish: null  // triggers when Finish button is clicked
+    };
 
 })(jQuery);
