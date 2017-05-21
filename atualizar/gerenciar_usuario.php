@@ -52,13 +52,11 @@
 
             }
             if (mysqli_query($con, $sql)) {
-
-                echo "Atualizado com sucesso";
+                header("Location: ../dashboard.php?resut=atualizado");
 
             } else {
 
-                echo "Erroa ao atualizar";
-                echo mysqli_error($con);
+                header("Location: ../dashboard.php?resut=atualizadoErro");
             }
 
         }
@@ -71,11 +69,11 @@
 
                         if (mysqli_query($con, $sql_del)) {
 
-                            echo "Excluido";
+                            header("Location: ../logout.php?");
 
                         } else {
 
-                            echo "erro ao excluir";
+                            header("Location: ../dashboard.php?resut=excluirErro");
 
                         }
                     }
@@ -86,11 +84,11 @@
 
                         if (mysqli_query($con, $sql_del)) {
 
-                            echo "Excluido";
+                            header("Location: ../logout.php?");
 
                         } else {
 
-                            echo "erro ao excluir";
+                            header("Location: ../dashboard.php?resut=excluirErro");
 
                         }
                     }

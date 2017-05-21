@@ -35,7 +35,7 @@
                             <a href="../dashboard.php">Inicio</a>
                         </li>
                         <li>
-                            <?php echo '<a href=../atualizar/alterar_aluno.php?email='. $_SESSION['email'].' > Editar Dados</a>'; ?>
+                            <?php echo '<a href=../atualizar/gerenciar_usuario.php?email='. $_SESSION['email'].' > Editar Dados</a>'; ?>
                         </li>
                         <li class="divider"></li>
                         <li>

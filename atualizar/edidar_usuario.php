@@ -51,7 +51,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form role="form" method="POST" action="alterar_aluno.php">
+                <form role="form" method="POST" action="gerenciar_usuario.php">
 
 
                     <?php
@@ -86,7 +86,7 @@
 
                     echo"<div class='form-group'>
                         <label class='control-label' for='exampleInputNome'>Nome</label>
-                             <input class='form-control' id='exampleInputNome' name='cadastro_input_nome'  value= ' $nome' type='text'>
+                             <input class='form-control' id='exampleInputNome' name='cadastro_input_nome'  value= '$nome' type='text'>
 
                     </div>
                     <div class='form-group'>

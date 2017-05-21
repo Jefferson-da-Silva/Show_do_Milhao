@@ -18,11 +18,11 @@ $profissaoLogado = $_SESSION['profissao'];
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap2.css" rel="stylesheet" type="text/css">
     <title>Show do Milhão</title>
     <link rel="icon" href="img/show_logo.png" />
 
@@ -46,10 +46,10 @@ $profissaoLogado = $_SESSION['profissao'];
             <ul class="nav navbar-nav navbar-right">
             <li></li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" arfa-expanded="false" contenteditable="true"><i class="et-down fa fa-2x fa-user text-primary"><br></i></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" arfa-expanded="false" contenteditable="false"><i class="et-down fa fa-2x fa-user text-primary"><br></i></a>
                 <ul class="dropdown-menu" role="menu">
                 <li>
-                   <a href=atualizar/alterar_a.php> Editar Dados</a>
+                   <a href=atualizar/edidar_usuario.php> Editar Dados</a>
                 </li>
                  <li class="divider"></li>
                   <li>
