@@ -91,7 +91,7 @@ $profissaoLogado = $_SESSION['profissao'];
                                                 echo "<tr>
                                                     <td>$nomeProfessor</td>
                                                     <td>$emailProfessor</td>
-                                                    <td><a href='excluir/excluirProfessor?email=$emailProfessor' class='btn btn-danger btn-xs'>Excluir</a></td>
+                                                    <td><a href='excluir/excluirProfessor.php?email=$emailProfessor' class='btn btn-danger btn-xs'>Excluir</a></td>
                                                 </tr>";
                                             }
                                             ?>
@@ -120,7 +120,7 @@ $profissaoLogado = $_SESSION['profissao'];
                                                 echo "<tr>
                                                     <td>$nome</td>
                                                     <td>$email</td>
-                                                    <td><a href='excluir/excluirAluno?email=$email' class='btn btn-danger btn-xs'>Excluir</a></td>
+                                                    <td><a href='excluir/excluirAluno.php?email=$email' class='btn btn-danger btn-xs'>Excluir</a></td>
                                                 </tr>";
                                             }
                                             ?>
@@ -178,7 +178,7 @@ $profissaoLogado = $_SESSION['profissao'];
                       <td>$Descricao_Curso</td>
                       <td>$Instituicao</td>
                       <td>$nome_Professor</td>
-                      <td><a href='excluir/excluirJogo?nome=$nome' class='btn btn-danger btn-xs'>Excluir</a></td>
+                      <td><a href='excluir/excluirJogo.php?nome=$nome' class='btn btn-danger btn-xs'>Excluir</a></td>
 
                     </tr>";
                                 $index++;

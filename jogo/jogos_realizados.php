@@ -89,7 +89,7 @@
                     </thead>
                     <tbody>
                     <?php
-                    require_once "../conecta.php" ;
+                    require_once "../conecta.php";
 
                     $sql_partida = "select * from Jogo";
                     $resultado_partida = mysqli_query($con, $sql_partida);
