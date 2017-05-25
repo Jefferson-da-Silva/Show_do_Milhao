@@ -64,7 +64,7 @@
                       <td>$Descricao_Curso</td>
                       <td>$Instituicao</td>
                       <td>$nome_Professor</td>
-                      <td><a href='atualizar/atualizar_perguntas.php?nome=$nome' class='btn btn-danger btn-xs'>Editar</a></td>
+                      <td><a href='atualizar/editar_perguntas.php?nome=$nome' class='btn btn-danger btn-xs'>Editar</a></td>
                       <td><a href='atualizar/excluirJogo.php?nome=$nome' class='btn btn-danger btn-xs'>Excluir</a></td>
 
 

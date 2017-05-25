@@ -74,6 +74,7 @@
         </div>
       </div>
     </div>
+
     <div class="section">
       <div class="container">
         <div class="row">
@@ -111,6 +112,7 @@
                   $index = 1;
                   while ($res = mysqli_fetch_array($res_jogo)) {
                       $nome = $res['Descricao_Jogo'];
+                      $nome_jogo = $nome;
                       $id_Jogo= $res['Curso_idCurso'];
                       $idProfessor= $res['Professor_idProfessor'];
                       $sql_curso = "select * from Curso where idCurso='$id_Jogo'";
@@ -123,20 +125,27 @@
                       $res_instituicao= mysqli_fetch_array($resultado_professor);
                       $Instituicao = $res_instituicao['Instituicao'];
                       $nome_Professor= $res_instituicao['Nome'];
+                      $_SESSION['nome'] = $nome;
                       echo "
+
                     <tr>
                       <td>$index</td>
                       <td>$nome</td>
                       <td>$Descricao_Curso</td>
                       <td>$Instituicao</td>
                       <td>$nome_Professor</td>
-                      <td><a href='atualizar/atualizar_perguntas.php?nome=$nome' class='btn btn-warning btn-xs'>Editar</a></td>
-                      <td><a href='atualizar/excluirJogo.php?nome=$nome' class='btn btn-danger btn-xs'>Excluir</a></td>
 
+                       <td><a href='editar_perguntas.php?valor=$nome_jogo'> <button type='submit' name='botao_excluir' class='btn btn-warning btn-xs'>Editar
+                        <i class='fa fa-fw fa-trash-o'></i>
+                    </button></a></td>
+                     <td><a href='editar_perguntas.php?valor=$nome_jogo'> <button type='submit' name='botao_excluir' class='btn btn-danger btn-xs'>Excluir
+                        <i class='fa fa-fw fa-trash-o'></i>
+                    </button></a></td>
 
                     </tr>";
                       $index++;
                   }
+
                   ?>
 
                   </tbody>
