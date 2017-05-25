@@ -23,6 +23,11 @@ $profissaoLogado = $_SESSION['profissao'];
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="css/bootstrap2.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/page_pingendo.css" rel="stylesheet" type="text/css">
+    <link href="css/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
     <title>Show do Milhão</title>
     <link rel="icon" href="img/show_logo.png" />
 
@@ -49,8 +54,16 @@ $profissaoLogado = $_SESSION['profissao'];
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" arfa-expanded="false" contenteditable="false"><i class="et-down fa fa-2x fa-user text-primary"><br></i></a>
                     <ul class="dropdown-menu" role="menu">
                         <li>
-                            <a href=atualizar/edidar_usuario.php> Editar Dados</a>
+                            <a href=atualizar/edidar_usuario.php> Editar Dados </a>
                         </li>
+                        <?php
+                        if($profissaoLogado == "professor") {
+                            echo " <li class='divider'></li>
+                        <li>
+                            <a href=atualizar/meus_jogos.php> Meus Jogos </a>
+                        </li>";
+                        }
+                        ?>
                         <li class="divider"></li>
                         <li>
                             <a href="logout.php" >Sair</a>

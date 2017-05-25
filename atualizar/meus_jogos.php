@@ -138,9 +138,7 @@
                        <td><a href='editar_perguntas.php?valor=$nome_jogo'> <button type='submit' name='botao_excluir' class='btn btn-warning btn-xs'>Editar
                         <i class='fa fa-fw fa-trash-o'></i>
                     </button></a></td>
-                     <td><a href='editar_perguntas.php?valor=$nome_jogo'> <button type='submit' name='botao_excluir' class='btn btn-danger btn-xs'>Excluir
-                        <i class='fa fa-fw fa-trash-o'></i>
-                    </button></a></td>
+
 
                     </tr>";
                       $index++;
