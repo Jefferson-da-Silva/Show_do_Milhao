@@ -12,6 +12,8 @@
     <link href="../css/plugins/chosen/chosen.css" rel="stylesheet">
     <link href="../css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
     <link href="../css/plugins/iCheck/custom.css" rel="stylesheet">
+    <script src="../sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../sweetalert/dist/sweetalert.css">
     <title>Jogos Cadastrados</title>
     <link rel="icon" href="../img/show_logo.png" />
 </head><body class="hidden-md hidden-sm hidden-xs" data-spy="scroll">
@@ -94,7 +96,7 @@
                     $sql_partida = "select * from Jogo";
                     $resultado_partida = mysqli_query($con, $sql_partida);
                     $index = 1;
-                    $Visibilidade_Jogo="teste";
+                    $Visibilidade_Jogo="";
                     while ($res = mysqli_fetch_array($resultado_partida)) {
                         $nome = $res['Descricao_Jogo'];
                         $id_Jogo= $res['Curso_idCurso'];
@@ -113,7 +115,7 @@
                         echo "
                     <tr>
                       <td>$index</td>
-                      <td><a href='#' style='text-decoration: none' onclick='visibilidade()'>$nome</a></td>
+                      <td><a href='#' style='text-decoration: none' onclick='visibilidade(\"$Visibilidade_Jogo\")'>$nome</a></td>
                       <td>$Descricao_Curso</td>
                       <td>$Instituicao</td>
                       <td>$nome_Professor</td>
@@ -122,9 +124,11 @@
                         $index++;
                         
                     }
-                    echo '<script>function visibilidade (){
-                     if("'.$Visibilidade_Jogo.'"== "Privado"){
-                        alert ("Solicitar Liberação");
+                    echo '<script>function visibilidade (visivel){
+                    var teste = ""+visivel;
+                     if( teste == "Privado"){
+
+                        verificarAcesso();
                      }else{
                         window.location.assign("../jogo/jogo.html");
                         
@@ -194,6 +198,27 @@
         </div>
     </div>
 </footer>
+<script>
+    function verificarAcesso(){
+    swal({
+            title: "Jogo Privado",
+            text: "Deseja solicitar acesso?",
+            imageUrl: "../img/cadeado.png",
+            showCancelButton: true,
+            confirmButtonColor: "#1E90FF",
+            confirmButtonText: "Sim",
+            cancelButtonText: "Não",
+            closeOnConfirm: false
+        },
+        function(){
+            swal("Solicitado", "Aguarde a liberação do professor.", "success");
+            $.post("page.php", { buttonid: buttonid })
+                .done(function(data) {
+                    alert("Data Loaded: " + data);
+                });
 
+        });
+    }
+</script>
 
 </body></html>
