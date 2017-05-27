@@ -35,7 +35,7 @@
                             <a href="../dashboard.php">Inicio</a>
                         </li>
                         <li>
-                            <?php echo '<a href=../atualizar/gerenciar_usuario.php?email='. $_SESSION['email'].' > Editar Dados</a>'; ?>
+                            <?php session_start(); echo "<a href=../atualizar/gerenciar_usuario.php?email=". $_SESSION['email']." > Editar Dados</a>"; ?>
                         </li>
                         <li class="divider"></li>
                         <li>
@@ -94,9 +94,11 @@
                     $sql_partida = "select * from Jogo";
                     $resultado_partida = mysqli_query($con, $sql_partida);
                     $index = 1;
+                    $Visibilidade_Jogo="teste";
                     while ($res = mysqli_fetch_array($resultado_partida)) {
                         $nome = $res['Descricao_Jogo'];
                         $id_Jogo= $res['Curso_idCurso'];
+                        $Visibilidade_Jogo= $res['Visibilidade_Jogo'];
                         $idProfessor= $res['Professor_idProfessor'];
                         $sql_curso = "select * from Curso where idCurso='$id_Jogo'";
                         $resultado_curso = mysqli_query($con, $sql_curso);
@@ -111,14 +113,23 @@
                         echo "
                     <tr>
                       <td>$index</td>
-                      <td><a href='#' style='text-decoration: none'>$nome</a></td>
+                      <td><a href='#' style='text-decoration: none' onclick='visibilidade()'>$nome</a></td>
                       <td>$Descricao_Curso</td>
                       <td>$Instituicao</td>
                       <td>$nome_Professor</td>
                       </a>
                     </tr>";
                         $index++;
+                        
                     }
+                    echo '<script>function visibilidade (){
+                     if("'.$Visibilidade_Jogo.'"== "Privado"){
+                        alert ("Solicitar Liberação");
+                     }else{
+                        window.location.assign("../jogo/jogo.html");
+                        
+                     }  
+                    }</script>';
                     ?>
 
                     </tbody>
