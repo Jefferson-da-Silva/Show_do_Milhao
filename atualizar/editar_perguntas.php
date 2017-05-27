@@ -71,7 +71,7 @@
                     <label for='inputEmail3' class='control-label'>Seu Jogo</label>
                 </div>
                 <div class='col-sm-10'>
-                    <input class='form-control' id='nome_jogo' value='$nome_jogo' name='nome_jogo'  rows='5' required=''/>
+                    <input class='form-control' id='nome_jogo' value='$nome_jogo' name='nome_jogo'  rows='5'/>
                 </div>
             </div>";
 

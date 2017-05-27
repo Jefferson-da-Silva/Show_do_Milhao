@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 
 <?php
-
-
-
-if($var == "true"){
+if(isset ($_GET['dados'])){
+$var = $_GET['dados'];
+if( $var== "true"){
     echo " <script type='text/javascript'>
         function startSuccess(){
             swal('Dados Salvos!', '', 'success');
@@ -18,7 +17,10 @@ if($var == "true"){
         };
         window.onload=startError;
         </script>";
+}  
 }
+
+
 ?>
 
 <html lang="pt-br"><head>

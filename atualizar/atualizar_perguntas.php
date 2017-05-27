@@ -33,7 +33,7 @@ if(isset($_POST['botao_alterar'])) {
 
 
         $insert = mysqli_query($con, $sql);
-
+        header("Location: meus_jogos.php?");
 
     }
 }
@@ -51,7 +51,7 @@ if(isset($_POST['botao_alterar'])) {
 
             $sql_del = "DELETE FROM Jogo WHERE Descricao_Jogo ='$nome_jogo'";
             mysqli_query($con, $sql_del);
-
+            header("Location: meus_jogos.php?");
             echo mysqli_error($con);
 
         }
