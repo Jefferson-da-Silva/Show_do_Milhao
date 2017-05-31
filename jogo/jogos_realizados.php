@@ -16,6 +16,38 @@
     <link rel="stylesheet" type="text/css" href="../sweetalert/dist/sweetalert.css">
     <title>Jogos Cadastrados</title>
     <link rel="icon" href="../img/show_logo.png" />
+
+
+    <script>
+        function verificarAcesso(email, idJogo, nome, idCurso, idProfessor){
+            swal({
+                    title: "Jogo Privado",
+                    text: "Deseja solicitar acesso?",
+                    imageUrl: "../img/cadeado.png",
+                    showCancelButton: true,
+                    confirmButtonColor: "#1E90FF",
+                    confirmButtonText: "Sim",
+                    cancelButtonText: "Não",
+                    closeOnConfirm: false
+                },
+                function(){
+
+                    $.post("liberar_acesso.php", { email_jogador: email,
+                        idJogo: idJogo,
+                        nome_jogo: nome,
+                        idCurso: idCurso,
+                        idProfessor:idProfessor})
+                        .done(function(resposta) {
+                             if(resposta =="inseriu")
+                            swal("Solicitado", "Aguarde a liberação do professor.", "success");
+                             else
+                            swal("Erro", "Erro ao tentar solicitar.", "error");
+                        });
+
+                });
+        }
+    </script>
+
 </head><body class="hidden-md hidden-sm hidden-xs" data-spy="scroll">
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -93,29 +125,37 @@
                     <?php
                     require_once "../conecta.php";
 
+
+                    $emailLogado = $_SESSION['email'];
                     $sql_partida = "select * from Jogo";
                     $resultado_partida = mysqli_query($con, $sql_partida);
                     $index = 1;
                     $Visibilidade_Jogo="";
                     while ($res = mysqli_fetch_array($resultado_partida)) {
-                        $nome = $res['Descricao_Jogo'];
-                        $id_Jogo= $res['Curso_idCurso'];
-                        $Visibilidade_Jogo= $res['Visibilidade_Jogo'];
-                        $idProfessor= $res['Professor_idProfessor'];
-                        $sql_curso = "select * from Curso where idCurso='$id_Jogo'";
-                        $resultado_curso = mysqli_query($con, $sql_curso);
-                        $res_curso= mysqli_fetch_array($resultado_curso);
-                        $Descricao_Curso = $res_curso['Descricao_Curso'];
+                        $nome               = $res['Descricao_Jogo'];
+                        $idJogo             = $res['idJogo'];
+                        $id_Curso           = $res['Curso_idCurso'];
+                        $Visibilidade_Jogo  = $res['Visibilidade_Jogo'];
+                        $idProfessor        = $res['Professor_idProfessor'];
 
-                        $sql_instituicao = "select * from Professor where idProfessor='$idProfessor'";
-                        $resultado_professor = mysqli_query($con, $sql_instituicao);
-                        $res_instituicao= mysqli_fetch_array($resultado_professor);
-                        $Instituicao = $res_instituicao['Instituicao'];
-                        $nome_Professor= $res_instituicao['Nome'];
+                        $sql_curso          = "select * from Curso where idCurso='$id_Curso'";
+                        $resultado_curso    = mysqli_query($con, $sql_curso);
+                        $res_curso          = mysqli_fetch_array($resultado_curso);
+                        $Descricao_Curso    = $res_curso['Descricao_Curso'];
+
+                        $sql_instituicao        = "select * from Professor where idProfessor='$idProfessor'";
+                        $resultado_professor    = mysqli_query($con, $sql_instituicao);
+                        $res_instituicao        = mysqli_fetch_array($resultado_professor);
+                        $Instituicao            = $res_instituicao['Instituicao'];
+                        $nome_Professor         = $res_instituicao['Nome'];
                         echo "
                     <tr>
                       <td>$index</td>
-                      <td><a href='#' style='text-decoration: none' onclick='visibilidade(\"$Visibilidade_Jogo\")'>$nome</a></td>
+                      <td><a href='#' style='text-decoration: none' onclick='visibilidade(\"$Visibilidade_Jogo\",
+                                                                           \"$idJogo\",
+                                                                           \"$nome\",
+                                                                           \"$id_Curso\",
+                                                                           \"$idProfessor\")'>$nome</a></td>
                       <td>$Descricao_Curso</td>
                       <td>$Instituicao</td>
                       <td>$nome_Professor</td>
@@ -124,11 +164,11 @@
                         $index++;
                         
                     }
-                    echo '<script>function visibilidade (visivel){
+                    echo '<script>function visibilidade(visivel, idJogo, nome, idCurso, idProfessor){
                     var teste = ""+visivel;
                      if( teste == "Privado"){
-
-                        verificarAcesso();
+                        var email = "'.$emailLogado.'";
+                        verificarAcesso(email, idJogo, nome, idCurso, idProfessor);
                      }else{
                         window.location.assign("../jogo/jogo.html");
                         
@@ -198,27 +238,4 @@
         </div>
     </div>
 </footer>
-<script>
-    function verificarAcesso(){
-    swal({
-            title: "Jogo Privado",
-            text: "Deseja solicitar acesso?",
-            imageUrl: "../img/cadeado.png",
-            showCancelButton: true,
-            confirmButtonColor: "#1E90FF",
-            confirmButtonText: "Sim",
-            cancelButtonText: "Não",
-            closeOnConfirm: false
-        },
-        function(){
-            swal("Solicitado", "Aguarde a liberação do professor.", "success");
-            $.post("page.php", { buttonid: buttonid })
-                .done(function(data) {
-                    alert("Data Loaded: " + data);
-                });
-
-        });
-    }
-</script>
-
 </body></html>

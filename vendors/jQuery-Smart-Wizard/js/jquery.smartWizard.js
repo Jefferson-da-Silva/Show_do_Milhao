@@ -118,12 +118,13 @@ function SmartWizard(target, options) {
 
             //console.log(corretas);
             //CAPTURA OS DADOS DO FORMULARIO
-
+            console.log(document.getElementById('optradio1').value);
+            console.log(document.getElementById('optradio2').value);
             if(document.getElementById('optradio1').value == "on")
                 visibilidade = "Publico";
-            else if(document.getElementById('optradio2').value == "on")
+            if(document.getElementById('optradio2').value == "on")
                 visibilidade = "Privado";
-
+            console.log(visibilidade);
 
             //CAPTURA OS DADOS DAS PERGUNTAS
 
@@ -520,7 +521,7 @@ function SmartWizard(target, options) {
         contentURL:null, // content url, Enables Ajax content loading
         contentCache:true, // cache step contents, if false content is fetched always from ajax url
         cycleSteps: false, // cycle step navigation
-        enableFinishButton: false, // make finish button enabled always
+        enableFinishButton: true, // make finish button enabled always
         hideButtonsOnDisabled: false, // when the previous/next/finish buttons are disabled, hide them instead?
         errorSteps:[],    // Array Steps with errors
         labelNext:'Próximo',

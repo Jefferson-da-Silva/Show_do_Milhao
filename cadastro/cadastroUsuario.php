@@ -16,7 +16,7 @@ require_once "../conecta.php" ;
         $titulo = $_POST['cadastro_input_titulo'];
         $senha = $_POST['cadastro_input_senha'];
         $confirma_senha = $_POST['cadastro_input_confirma_senha'];
-        $equipe = "";
+        $equipe = '';
 
 
         if ($profissao == "radio_professor") {
@@ -48,11 +48,9 @@ require_once "../conecta.php" ;
                 //echo "<script language='javascript' type='text/javascript'>swal('Usuario ja existente', '', 'error');</script>";
             } else {
 
-                if ($existe_email) {
 
-                } else {
 
-                    $sql = "insert into Jogador (Nome, Instituicao, Equipe, CPF, Email, Senha ) value
+                  $sql = "insert into Jogador (Nome, Instituicao, Equipe, CPF, Email, Senha ) value
             ('$nome', '$instituicao', '$equipe', '$cpf', '$email', '$senha')";
                     $insert = mysqli_query($con, $sql);
                     if ($insert) {
@@ -61,7 +59,7 @@ require_once "../conecta.php" ;
                         echo "não";
                         echo mysqli_error($con);
 
-                    }
+
                 }
             }
         }
