@@ -11,7 +11,34 @@
   <link href="../css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
   <link href="../css/plugins/iCheck/custom.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> </head>
+    <script src="../sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../sweetalert/dist/sweetalert.css">
+<script>
+        function liberarAcesso(id_acesso){
 
+            $.post("update_acesso.php", { idAcesso: id_acesso}).done(function(resposta) {
+                    if(resposta =="Liberado")
+                        swal({
+                                title: "Aluno Liberado",
+                                text: "",
+                                imageUrl: "../img/cadeado.png",
+                                showCancelButton: false,
+                                confirmButtonColor: "#1E90FF",
+                                confirmButtonText: "Sim",
+                                cancelButtonText: "Não",
+                                closeOnConfirm: false
+                            },
+                            function(){
+                                window.location.replace("solicita.php");
+                            });
+                    else
+                        swal("Erro", "Erro ao liberar", "error");
+                });
+
+        }
+
+
+    </script>
 <body class="hidden-md hidden-sm hidden-xs" data-spy="scroll">
   <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -63,6 +90,7 @@
               </tr>
             </thead>
             <tbody>
+
             <?php
                 require "../conecta.php";
                 session_start();
@@ -73,10 +101,11 @@
                 $res_prof = mysqli_fetch_array($resultado_prof);
                 $id_prof = $res_prof['idProfessor'];
 
-                $sql_acesso = "SELECT * FROM Acesso WHERE Jogo_Professor_idProfessor = '$id_prof' AND Status_Acesso = 'Solicitado'";
+                $sql_acesso = "SELECT * FROM Acesso WHERE Jogo_Professor_idProfessor = '$id_prof' ";
                 $resultado_acesso = mysqli_query($con,$sql_acesso);
                 while ($res_acesso = mysqli_fetch_array($resultado_acesso)) {
                     $id_acesso = $res_acesso['idAcesso'];
+                    $status_acesso = $res_acesso['Status_Acesso'];
                     $id_jogo = $res_acesso['Jogo_idJogo'];
                     $email_aluno = $res_acesso['Jogador_Email'];
                     $id_curso = $res_acesso['Jogo_Curso_idCurso'];
@@ -104,8 +133,12 @@
                 <td>$email_aluno</td>
                 <td>$nome_curso</td>
                 <td>
-                  <button type='submit' name='botao_excluir' class='btn btn-danger btn-xs'>Negar <i class='fa fa-fw fa-lock'></i> </button>
-                  <button type='submit' name='botao_excluir' class='btn btn-success btn-xs'>Liberar <i class='fa fa-fw fa-unlock'></i> </button>
+                  <button type='submit' name='botao_negar'  class='btn btn-danger btn-xs'>Negar <i class='fa fa-fw fa-lock'></i> </button>";
+                    if($status_acesso =="Solicitado"){
+                    echo"
+                  <button type='submit' name='botao_liberar' onclick='liberarAcesso($id_acesso)' class='btn btn-success btn-xs'>Liberar <i class='fa fa-fw fa-unlock'></i> </button>";
+            }
+                    echo"
                 </td>
               </tr>";
             }

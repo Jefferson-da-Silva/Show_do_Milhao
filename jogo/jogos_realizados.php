@@ -127,10 +127,18 @@
 
 
                     $emailLogado = $_SESSION['email'];
+
+                    $sql_acesso = "SELECT Status_Acesso FROM Acesso WHERE Jogador_Email = '$emailLogado'";
+                    $resultado_acesso = mysqli_query($con, $sql_acesso);
+                    $res_acesso = mysqli_fetch_array($resultado_acesso);
+                    $status_acesso = $res_acesso['Status_Acesso'];
+
                     $sql_partida = "select * from Jogo";
                     $resultado_partida = mysqli_query($con, $sql_partida);
                     $index = 1;
                     $Visibilidade_Jogo="";
+
+
                     while ($res = mysqli_fetch_array($resultado_partida)) {
                         $nome               = $res['Descricao_Jogo'];
                         $idJogo             = $res['idJogo'];
@@ -162,17 +170,21 @@
                       </a>
                     </tr>";
                         $index++;
-                        
+
                     }
                     echo '<script>function visibilidade(visivel, idJogo, nome, idCurso, idProfessor){
                     var teste = ""+visivel;
-                     if( teste == "Privado"){
+                    var status = "'.$status_acesso.'"
+                     if( teste == "Privado" && status ==""){
+
                         var email = "'.$emailLogado.'";
                         verificarAcesso(email, idJogo, nome, idCurso, idProfessor);
-                     }else{
+                     }else if(teste =="Publico" || status =="Liberado"){
                         window.location.assign("../jogo/jogo.html");
                         
-                     }  
+                     }else if(status == "Solicitado"){
+                      swal("Solicitação Pendente", "Aguarde a liberação do professor.", "info");
+                     }
                     }</script>';
                     ?>
 
