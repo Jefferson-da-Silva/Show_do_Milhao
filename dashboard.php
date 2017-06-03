@@ -131,7 +131,7 @@ if($profissaoLogado == "aluno"){
                   </a>
                   </div>
                   <div class='col-md-3' align='center'>
-                    <a href='#' style='text-decoration: none'><img src='img/icon_acess.png' class='img-circle img-responsive' width='200'>
+                    <a href='jogo/solicita.php' style='text-decoration: none'><img src='img/icon_acess.png' class='img-circle img-responsive' width='200'>
                     <h1 style='font-family: Lobster'>Liberar Aluno </h1></a>
                   </div>
                   <div class='col-md-3' align='center'>
