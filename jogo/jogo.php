@@ -52,6 +52,18 @@
                           <div class="col-md-6" id="divPergunta" style="position:relative;">
                             <img src="../img/pergunta.png" class="backgroud img-responsive padding">
                             <div style="position: absolute; top:20px; left:30px; color:white;" class="col-md-10 text-left">
+                            <?php
+                              require_once "../conecta.php"
+                              $emailLogado = $_SESSION['email'];
+
+                              $sql_perguntas = "SELECT Jogo.idJogo, Perguntas.idPerguntas
+                              FROM Jogo,Perguntas WHERE Jogo.Perguntas = Perguntas.Jogo_idJogo";
+
+                              
+
+
+                            ?>
+                            </div>
                               <p class="lead text-justify">Quais são as cinco alternativas do Programa Show do Milhão?</p>
                             </div>
                           </div>
@@ -85,7 +97,9 @@
                             <img src="../img/alternativa.png" class="img-responsive img-thumbnail">
                             <div style="position: absolute; top:10px; left:60px; color:white;" class="col-md-10">
                               <p class="lead text-justify">Alternativa 5</p>
+
                             </div>
+
                           </div>
                         </div>
                       </div>
