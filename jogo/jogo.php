@@ -55,14 +55,22 @@
                             <?php
                               require_once "../conecta.php";
                             session_start();
-                              $emailLogado = $_SESSION['email'];
-                                $nomeJogo = $_SESSION['Descricao_Jogo'];
-                            $sql_jogo = "SELECT * FROM Jogo WHERE Descricao_Jogo='$nomeJogo'";
+
+                            $emailLogado = $_SESSION['email'];
+                            $nomeJogo = $_SESSION['Descricao_Jogo'];
+                            $sql_jogo = "SELECT * FROM Jogo WHERE Descricao_Jogo ='$nomeJogo'";
                             $resultado_jogo    = mysqli_query($con, $sql_jogo);
                             $res_jogo          = mysqli_fetch_array($resultado_jogo);
                             $id_jogo = $res_jogo['idJogo'];
 
-                            $sql_perguntas = "SELECT * FROM Perguntas WHERE Jogo_idJogo = "
+                            $sql_perguntas = "SELECT * FROM Perguntas WHERE Jogo_idJogo = '$id_jogo'";
+                            $resultado_perguntas = mysqli_query($con, $sql_perguntas);
+
+                            while ($res_perguntas = mysqli_fetch_array($resultado_perguntas)) {
+                                $enunciado = $res_perguntas['Enunciado'];
+
+                            }
+
 
 
 
