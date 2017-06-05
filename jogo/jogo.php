@@ -53,13 +53,17 @@
                             <img src="../img/pergunta.png" class="backgroud img-responsive padding">
                             <div style="position: absolute; top:20px; left:30px; color:white;" class="col-md-10 text-left">
                             <?php
-                              require_once "../conecta.php"
+                              require_once "../conecta.php";
+                            session_start();
                               $emailLogado = $_SESSION['email'];
+                                $nomeJogo = $_SESSION['Descricao_Jogo'];
+                            $sql_jogo = "SELECT * FROM Jogo WHERE Descricao_Jogo='$nomeJogo'";
+                            $resultado_jogo    = mysqli_query($con, $sql_jogo);
+                            $res_jogo          = mysqli_fetch_array($resultado_jogo);
+                            $id_jogo = $res_jogo['idJogo'];
 
-                              $sql_perguntas = "SELECT Jogo.idJogo, Perguntas.idPerguntas
-                              FROM Jogo,Perguntas WHERE Jogo.Perguntas = Perguntas.Jogo_idJogo";
+                            $sql_perguntas = "SELECT * FROM Perguntas WHERE Jogo_idJogo = "
 
-                              
 
 
                             ?>

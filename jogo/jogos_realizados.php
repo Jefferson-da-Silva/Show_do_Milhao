@@ -150,6 +150,7 @@
                         $resultado_curso    = mysqli_query($con, $sql_curso);
                         $res_curso          = mysqli_fetch_array($resultado_curso);
                         $Descricao_Curso    = $res_curso['Descricao_Curso'];
+                        $_SESSION['Descricao_Jogo'] = $nome;
 
                         $sql_instituicao        = "select * from Professor where idProfessor='$idProfessor'";
                         $resultado_professor    = mysqli_query($con, $sql_instituicao);
@@ -180,7 +181,7 @@
                         var email = "'.$emailLogado.'";
                         verificarAcesso(email, idJogo, nome, idCurso, idProfessor);
                      }else if(teste =="Publico" || status =="Liberado"){
-                        window.location.assign("../jogo/jogo.html");
+                        window.location.assign("../jogo/jogo.php");
                         
                      }else if(status == "Solicitado"){
                       swal("Solicitação Pendente", "Aguarde a liberação do professor.", "info");
