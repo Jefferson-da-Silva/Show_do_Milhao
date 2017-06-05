@@ -57,7 +57,8 @@
                               $emailLogado = $_SESSION['email'];
 
                               $sql_perguntas = "SELECT Jogo.idJogo, Perguntas.idPerguntas
-                              FROM Jogo,Perguntas WHERE Jogo.Perguntas = Perguntas.Jogo_idJogo";
+                              FROM Jogo,Perguntas 
+                              WHERE Jogo.Perguntas = Perguntas.Jogo_idJogo";
 
                               
 
