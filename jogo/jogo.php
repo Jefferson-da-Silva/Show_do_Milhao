@@ -69,46 +69,41 @@
                             while ($res_perguntas = mysqli_fetch_array($resultado_perguntas)) {
                                 $enunciado = $res_perguntas['Enunciado'];
 
-                            }
 
-
-
-
-                            ?>
-                            </div>
-                              <p class="lead text-justify">Quais são as cinco alternativas do Programa Show do Milhão?</p>
+                                echo "</div>
+                              <p class='lead text-justify'>Quais são as cinco alternativas do Programa Show do Milhão?</p>
                             </div>
                           </div>
                         </div>
-                        <div class="col-md-6">
-                          <div class="col-md-12" id="divAlternativa1" style="position:relative;">
-                            <img src="../img/alternativa.png" class="img-responsive padding">
-                            <div style="position: absolute; top:10px; left:60px; color:white;" class="col-md-10">
-                              <p class="lead text-justify">Alternativa 1</p>
+                        <div class='col-md-6'>
+                          <div class='col-md-12' id='divAlternativa1' style='position:relative;'>
+                            <img src='../img/alternativa.png' class='img-responsive padding'>
+                            <div style='position: absolute; top:10px; left:60px; color:white;' class='col-md-10'>
+                              <p class='lead text-justify'>Alternativa 1</p>
                             </div>
                           </div>
-                          <div class="col-md-12" id="divAlternativa1" style="position:relative;">
-                            <img src="../img/alternativa.png" class="img-responsive img-thumbnail padding">
-                            <div style="position: absolute; top:10px; left:60px; color:white;" class="col-md-10">
-                              <p class="lead text-justify">Alternativa 2</p>
+                          <div class='col-md-12' id='divAlternativa1' style='position:relative;'>
+                            <img src='../img/alternativa.png' class='img-responsive img-thumbnail padding'>
+                            <div style='position: absolute; top:10px; left:60px; color:white;' class='col-md-10'>
+                              <p class='lead text-justify'>Alternativa 2</p>
                             </div>
                           </div>
-                          <div class="col-md-12" id="divAlternativa1" style="position:relative;">
-                            <img src="../img/alternativa.png" class="img-responsive padding">
-                            <div style="position: absolute; top:10px; left:60px; color:white;" class="col-md-10">
-                              <p class="lead text-justify">Alternativa 3</p>
+                          <div class='col-md-12' id='divAlternativa1' style='position:relative;'>
+                            <img src='../img/alternativa.png' class='img-responsive padding'>
+                            <div style='position: absolute; top:10px; left:60px; color:white;' class='col-md-10'>
+                              <p class='lead text-justify'>Alternativa 3</p>
                             </div>
                           </div>
-                          <div class="col-md-12" id="divAlternativa1" style="position:relative;">
-                            <img src="../img/alternativa.png" class="img-responsive padding">
-                            <div style="position: absolute; top:10px; left:60px; color:white;" class="col-md-10">
-                              <p class="lead text-justify">Alternativa 4</p>
+                          <div class='col-md-12' id='divAlternativa1' style='position:relative;'>
+                            <img src='../img/alternativa.png' class='img-responsive padding'>
+                            <div style='position: absolute; top:10px; left:60px; color:white;' class='col-md-10'>
+                              <p class='lead text-justify'>Alternativa 4</p>
                             </div>
                           </div>
-                          <div class="col-md-12" id="divAlternativa1" style="position:relative;">
-                            <img src="../img/alternativa.png" class="img-responsive img-thumbnail">
-                            <div style="position: absolute; top:10px; left:60px; color:white;" class="col-md-10">
-                              <p class="lead text-justify">Alternativa 5</p>
+                          <div class='col-md-12' id='divAlternativa1' style='position:relative;'>
+                            <img src='../img/alternativa.png' class='img-responsive img-thumbnail'>
+                            <div style='position: absolute; top:10px; left:60px; color:white;' class='col-md-10'>
+                              <p class='lead text-justify'>Alternativa 5</p>
 
                             </div>
 
@@ -117,72 +112,72 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="col-md-12">
-                      <h1 class="text-center text-primary">Ajudas</h1>
+                  <div class='col-md-6'>
+                    <div class='col-md-12'>
+                      <h1 class='text-center text-primary'>Ajudas</h1>
                     </div>
-                    <div class="section">
-                      <div class="row text-right">
-                        <div class=" col-md-4">
-                          <img src="../img/arrow1.png" class="img-responsive" width="100">
-                          <h1 class="text-center text-success">Pular</h1>
+                    <div class='section'>
+                      <div class='row text-right'>
+                        <div class= 'col-md-4'>
+                          <img src='../img/arrow1.png' class='img-responsive' width='100'>
+                          <h1 class='text-center text-success'>Pular</h1>
                         </div>
-                        <div class=" col-md-4">
-                          <img src="../img/arrow2.png" class="img-responsive" width="100">
-                          <h1 class="text-center text-success">Pular</h1>
+                        <div class= 'col-md-4'>
+                          <img src='../img/arrow2.png' class='img-responsive' width='100'>
+                          <h1 class='text-center text-success'>Pular</h1>
                         </div>
-                        <div class=" col-md-4">
-                          <img src="../img/arrow3.png" class="img-responsive" width="100">
-                          <h1 class="text-center text-success">Pular</h1>
+                        <div class='col-md-4'>
+                          <img src='../img/arrow3.png' class='img-responsive' width='100'>
+                          <h1 class='text-center text-success'>Pular</h1>
                         </div>
                       </div>
                       <di></di>
                     </div>
-                    <div class="section">
-                      <div class="row">
-                        <div class=" col-md-4">
-                          <img src="../img/placas.png" class="img-responsive" width="100">
-                          <h1 class="text-success">Placas</h1>
+                    <div class='section'>
+                      <div class='row'>
+                        <div class='col-md-4'>
+                          <img src='../img/placas.png' class='img-responsive' width='100'>
+                          <h1 class='text-success'>Placas</h1>
                         </div>
-                        <div class="col-md-4">
-                          <img src="../img/cartas.png" class="img-responsive" width="100">
-                          <h1 class="text-danger">Cartas</h1>
+                        <div class='col-md-4'>
+                          <img src='../img/cartas.png' class='img-responsive' width='100'>
+                          <h1 class='text-danger'>Cartas</h1>
                         </div>
-                        <div class="col-md-4">
-                          <img src="../img/universitarios.png" class="img-responsive" width="100">
-                          <h1 class="text-center text-warning">Convidados</h1>
+                        <div class='col-md-4'>
+                          <img src='../img/universitarios.png' class='img-responsive' width='100'>
+                          <h1 class='text-center text-warning'>Convidados</h1>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="section">
-                <div class="col-md-12" id="divPremio">
-                  <div class="section">
-                    <div class="container">
-                      <div class="row">
-                        <div class="col-md-3 text-center" style="position:relative;">
-                          <img src="../img/premio.png" class="img-responsive" width="260">
+              <div class='section'>
+                <div class='col-md-12' id='divPremio'>
+                  <div class='section'>
+                    <div class='container'>
+                      <div class='row'>
+                        <div class='col-md-3 text-center' style='position:relative;'>
+                          <img src='../img/premio.png' class='img-responsive' width='260'>
                         </div>
-                        <div class="col-md-2 text-center" style="position: absolute; top:80px; left:65px; color:black;">
-                          <p class="lead text-center">100 R$</p>
+                        <div class='col-md-2 text-center' style='position: absolute; top:80px; left:65px; color:black;'>
+                          <p class='lead text-center'>100 R$</p>
                         </div>
-                        <div class="col-md-3 text-center" style="position:relative;">
-                          <img src="../img/premio.png" class="img-responsive" width="260">
+                        <div class='col-md-3 text-center' style='position:relative;'>
+                          <img src='../img/premio.png' class='img-responsive' width='260'>
                         </div>
-                        <div class="col-md-2 text-center" style="position: absolute; top:80px; left:310px; color:black;">
-                          <p class="lead text-center">200 R$</p>
+                        <div class='col-md-2 text-center' style='position: absolute; top:80px; left:310px; color:black;'>
+                          <p class='lead text-center'>200 R$</p>
                         </div>
-                        <div class="col-md-3 text-center" style="position:relative;">
-                          <img src="../img/premio.png" class="img-responsive" width="260">
+                        <div class='col-md-3 text-center' style='position:relative;'>
+                          <img src='../img/premio.png' class='img-responsive' width='260'>
                         </div>
-                        <div class="col-md-2 text-center" style="position: absolute; top:80px; left:550px; color:black;">
-                          <p class="lead text-center">400 R$</p>
+                        <div class='col-md-2 text-center' style='position: absolute; top:80px; left:550px; color:black;'>
+                          <p class='lead text-center'>400 R$</p>
                         </div>
-                        <div class="col-md-3 text-center">
-                          <img src="../img/parar.png" class="center-block img-circle img-responsive" width="100">
-                          <h1 class="text-center text-danger">Parar</h1>
+                        <div class='col-md-3 text-center'>
+                          <img src='../img/parar.png' class='center-block img-circle img-responsive' width='100'>
+                          <h1 class='text-center text-danger'>Parar</h1>
                         </div>
                       </div>
                     </div>
@@ -193,7 +188,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>";
+                            }
+    ?>
     <!-- Chosen-->
     <script src="../js/plugins/chosen/chosen.jquery.js"></script>
     <!-- iCheck -->
