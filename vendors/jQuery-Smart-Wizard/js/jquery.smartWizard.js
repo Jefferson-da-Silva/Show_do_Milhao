@@ -142,7 +142,7 @@ function SmartWizard(target, options) {
                 'alternativas5_array': alternativas5
             }, function(result){
                 if(result == "inseriu"){
-                    window.location.assign("../cadastro/cadastro_jogo.php?dadossalvos=true");
+                    window.location.assign("../dashboard.php");
                 }else if(result == "false"){
                     window.location.assign("../cadastro/cadastro_jogo.php?dadossalvos=false");
                 }else if(result == "erro inserir pergunta"){
@@ -521,7 +521,7 @@ function SmartWizard(target, options) {
         contentURL:null, // content url, Enables Ajax content loading
         contentCache:true, // cache step contents, if false content is fetched always from ajax url
         cycleSteps: false, // cycle step navigation
-        enableFinishButton: true, // make finish button enabled always
+        enableFinishButton: false, // make finish button enabled always
         hideButtonsOnDisabled: false, // when the previous/next/finish buttons are disabled, hide them instead?
         errorSteps:[],    // Array Steps with errors
         labelNext:'Próximo',

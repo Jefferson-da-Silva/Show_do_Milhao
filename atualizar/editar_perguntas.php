@@ -115,7 +115,7 @@
                             echo"<input type='radio' name='optradio_pergunta$index'   value='alternativa 1' required='' />";
                         echo" </div>
                 <div class='col-sm-10'>
-                    <input type='text' class='form-control' name='input_alternativa1_$index' id='inputAlternativa1_$index' value='$alternativa1' >
+                    <input type='text' class='form-control' name='input_alternativa1_$index' id='inputAlternativa1_$index' value='$alternativa1' required='' >
                 </div>
             </div>
             <div class='form-group'>
@@ -128,7 +128,7 @@
                         echo"
                 </div>
                 <div class='col-sm-10'>
-                    <input type='text' class='form-control' name='input_alternativa2_$index' id='inputAlternativa2_$index' value='$alternativa2' >
+                    <input type='text' class='form-control' name='input_alternativa2_$index' id='inputAlternativa2_$index' value='$alternativa2' required='' >
                 </div>
             </div>
             <div class='form-group'>
@@ -141,7 +141,7 @@
                         echo"
                 </div>
                 <div class='col-sm-10'>
-                    <input type='text' class='form-control' name='input_alternativa3_$index' id='inputAlternativa3_$index' value='$alternativa3' >
+                    <input type='text' class='form-control' name='input_alternativa3_$index' id='inputAlternativa3_$index' value='$alternativa3' required=''>
                 </div>
             </div>
             <div class='form-group'>
@@ -154,7 +154,7 @@
                         echo"
                 </div>
                 <div class='col-sm-10'>
-                    <input type='text' class='form-control' name='input_alternativa4_$index' id='inputAlternativa4_$index' value='$alternativa4' >
+                    <input type='text' class='form-control' name='input_alternativa4_$index' id='inputAlternativa4_$index' value='$alternativa4' required=''>
                 </div>
             </div>
             <div class='form-group'>
@@ -167,7 +167,7 @@
                         echo"
                 </div>
                 <div class='col-sm-10'>
-                    <input type='text' class='form-control' name='input_alternativa5_$index' id='inputAlternativa5_$index' value='$alternativa5' >
+                    <input type='text' class='form-control' name='input_alternativa5_$index' id='inputAlternativa5_$index' value='$alternativa5' required=''>
                 </div>
 
             </div>

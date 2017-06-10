@@ -49,7 +49,7 @@ for ($i = 0; $i < 20; $i++) {
     <div id='step-$i'>
             <div class='form-group'>
                 <div class='col-sm-2'>
-                    <label for='inputEmail3' class='control-label'>Pergunta</label>
+                    <label for='inputEmail3' class='control-label' >Pergunta</label>
                 </div>
                 <div class='col-sm-10'>
                     <textarea class='form-control' id='inputextArea$i' placeholder='Pergunta' rows='5' required=''></textarea>

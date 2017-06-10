@@ -133,6 +133,7 @@
                 <td>$email_aluno</td>
                 <td>$nome_curso</td>
                 <td>
+
                   <button type='submit' name='botao_negar'  class='btn btn-danger btn-xs'>Negar <i class='fa fa-fw fa-lock'></i> </button>";
                     if($status_acesso =="Solicitado"){
                     echo"

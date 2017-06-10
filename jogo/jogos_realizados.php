@@ -19,6 +19,8 @@
 
 
     <script>
+
+
         function verificarAcesso(email, idJogo, nome, idCurso, idProfessor){
             swal({
                     title: "Jogo Privado",
@@ -128,10 +130,6 @@
 
                     $emailLogado = $_SESSION['email'];
 
-                    $sql_acesso = "SELECT Status_Acesso FROM Acesso WHERE Jogador_Email = '$emailLogado'";
-                    $resultado_acesso = mysqli_query($con, $sql_acesso);
-                    $res_acesso = mysqli_fetch_array($resultado_acesso);
-                    $status_acesso = $res_acesso['Status_Acesso'];
 
                     $sql_partida = "select * from Jogo";
                     $resultado_partida = mysqli_query($con, $sql_partida);
@@ -150,7 +148,7 @@
                         $resultado_curso    = mysqli_query($con, $sql_curso);
                         $res_curso          = mysqli_fetch_array($resultado_curso);
                         $Descricao_Curso    = $res_curso['Descricao_Curso'];
-                        $_SESSION['Descricao_Jogo'] = $nome;
+
 
                         $sql_instituicao        = "select * from Professor where idProfessor='$idProfessor'";
                         $resultado_professor    = mysqli_query($con, $sql_instituicao);
@@ -164,29 +162,49 @@
                                                                            \"$idJogo\",
                                                                            \"$nome\",
                                                                            \"$id_Curso\",
-                                                                           \"$idProfessor\")'>$nome</a></td>
+                                                                           \"$idProfessor\",
+                                                                           \"$emailLogado\")'>$nome</a></td>
                       <td>$Descricao_Curso</td>
                       <td>$Instituicao</td>
                       <td>$nome_Professor</td>
+
                       </a>
                     </tr>";
                         $index++;
 
                     }
-                    echo '<script>function visibilidade(visivel, idJogo, nome, idCurso, idProfessor){
-                    var teste = ""+visivel;
-                    var status = "'.$status_acesso.'"
+
+
+                    echo '<script>function visibilidade(visivel, idJogo, nome, idCurso, idProfessor, email){
+                    console.log(visivel+ idJogo+ nome+ idCurso+ idProfessor);
+                    var status = "";
+                    $.post("find_status.php", { emailLogado: email,
+                        idJogo: idJogo,
+                        idCurso: idCurso,
+                        idProfessor:idProfessor,
+                        nome: nome})
+                        .done(function(resposta) {
+                             status = resposta;
+
+                              var teste = ""+visivel;
+
+
                      if( teste == "Privado" && status ==""){
 
                         var email = "'.$emailLogado.'";
                         verificarAcesso(email, idJogo, nome, idCurso, idProfessor);
-                     }else if(teste =="Publico" || status =="Liberado"){
-                        window.location.assign("../jogo/jogo.php");
-                        
-                     }else if(status == "Solicitado"){
+                     }
+                      if(teste =="Publico" || status =="Liberado"){
+                        window.location.assign("../jogo/jogo.php?jogo="+idJogo);
+
+                     }
+                      if(status == "Solicitado"){
                       swal("Solicitação Pendente", "Aguarde a liberação do professor.", "info");
                      }
-                    }</script>';
+                        });
+
+                    }
+                    </script>';
                     ?>
 
                     </tbody>
